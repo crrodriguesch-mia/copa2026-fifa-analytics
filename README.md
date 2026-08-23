@@ -3,7 +3,7 @@
 Estudo de caso para a disciplina Visualização de Dados e Elaboraçãode Dashboards
 ESTUDO DE CASO – COPA DO MUNDO FIFA 2026
 
-**Disciplina:** Visualização de Dados e Elaboração de Dashboards **Professor:**Dr. José Remo Ferreira Brega
+**Disciplina:** Visualização de Dados e Elaboração de Dashboards **Professor:** Dr. José Remo Ferreira Brega
 · **Aluno:** Carlos Rodrigues · Agosto de 2026
 
 ![Dashboard da Copa 2026](docs/hero.jpg)
