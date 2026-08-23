@@ -54,11 +54,7 @@ docs/       capturas de tela e cópia do dashboard para o GitHub Pages
 | `saida/relatorio_copa2026.docx` | Relatório final, 15 páginas |
 | `dados/validacao.txt` | Relatório de auditoria da base |
 
-## Como reproduzir
 
-```bash
-pip install pandas numpy scipy scikit-learn mlxtend playwright
-npm install docx        # apenas para gerar o relatório
 
 python codigo/01_preparacao_dados.py
 python codigo/02_estatistica.py
