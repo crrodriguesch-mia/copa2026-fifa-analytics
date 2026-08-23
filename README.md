@@ -12,7 +12,6 @@ ESTUDO DE CASO – COPA DO MUNDO FIFA 2026
 
 ## Índice
 
-- [Resultado em uma frase](#resultado-em-uma-frase)
 - [Dashboard](#dashboard)
 - [Estrutura do repositório](#estrutura-do-repositório)
 - [A base de dados](#a-base-de-dados)
@@ -23,29 +22,15 @@ ESTUDO DE CASO – COPA DO MUNDO FIFA 2026
 - [Limitações](#limitações)
 - [Fontes](#fontes)
 
-## Resultado em uma frase
-
-Solidez defensiva e volume ofensivo qualificado — **não** posse de bola por si só são os
-fatores associados ao avanço na competição. Três técnicas independentes (teste de Mann-Whitney,
-regras de associação e árvore de decisão) convergem para o mesmo par de variáveis.
 
 ## Dashboard
-
-`saida/dashboard_copa2026.html` é um **arquivo único autocontido**: os dados tratados estão
-embutidos como JSON e todos os gráficos são gerados em SVG por código próprio, sem bibliotecas
-externas nem servidor. Basta abrir no navegador — funciona offline.
-
-Para publicar como página: em **Settings → Pages**, selecione a branch e a pasta `/docs`.
-O dashboard é servido em `https://<usuário>.github.io/<repositório>/`
-(`docs/index.html` é uma cópia do painel).
 
 | | |
 |---|---|
 | ![Desempenho das seleções](docs/secao-selecoes.jpg) | ![Mineração de dados, tema escuro](docs/secao-mineracao-escuro.jpg) |
 | Desempenho das seleções, tema claro | Mineração de dados, tema escuro |
 
-Doze painéis, filtros que governam a página inteira (fase, confederação, perfil tático,
-indicador e busca), tabela equivalente para cada gráfico e suporte aos temas claro e escuro.
+
 
 ## Estrutura do repositório
 
@@ -83,17 +68,6 @@ python codigo/05_gera_dashboard.py
 python codigo/06_teste_dashboard.py     # opcional
 node   codigo/07_gera_relatorio.js
 ```
-
-Cada script imprime os resultados no terminal e grava os arquivos em `dados/` ou `saida/`.
-**Nenhum número do relatório é digitado à mão:** todos são lidos dos JSON gerados pelas etapas 2 e 3,
-de modo que uma correção nos dados se propaga automaticamente para o relatório e para o dashboard.
-
-## A base de dados
-
-Não existe base pública consolidada e legível por máquina da Copa de 2026: o site oficial da FIFA
-renderiza as tabelas por JavaScript e a Wikipédia, na data da coleta, ainda apresentava conteúdo
-anterior ao torneio no cache acessível. A base foi construída a partir de **53 endereços de fontes
-públicas**, com confirmação em pelo menos duas fontes independentes por informação.
 
 | Arquivo | Conteúdo |
 |---|---|
