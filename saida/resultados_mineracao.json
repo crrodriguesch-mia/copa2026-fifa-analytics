@@ -1,0 +1,486 @@
+{
+  "diagnostico_k": [
+    {
+      "k": 2,
+      "inercia": 176.32,
+      "silhueta": 0.424
+    },
+    {
+      "k": 3,
+      "inercia": 140.37,
+      "silhueta": 0.317
+    },
+    {
+      "k": 4,
+      "inercia": 114.6,
+      "silhueta": 0.249
+    },
+    {
+      "k": 5,
+      "inercia": 100.98,
+      "silhueta": 0.229
+    },
+    {
+      "k": 6,
+      "inercia": 89.33,
+      "silhueta": 0.242
+    },
+    {
+      "k": 7,
+      "inercia": 81.21,
+      "silhueta": 0.224
+    }
+  ],
+  "kmeans": {
+    "k": 4,
+    "variaveis": [
+      "posse_media",
+      "precisao_passes",
+      "passes_por_jogo",
+      "chutes_por_jogo",
+      "chutes_a_gol_por_jogo",
+      "xg_por_jogo",
+      "gols_por_jogo",
+      "gols_sofridos_por_jogo"
+    ],
+    "silhueta": 0.249,
+    "perfis": [
+      {
+        "cluster": 0,
+        "n": 11,
+        "posse": 57.18,
+        "precisao_passes": 89.27,
+        "passes_jogo": 535.28,
+        "chutes_jogo": 17.36,
+        "chutes_gol_jogo": 6.39,
+        "xg_jogo": 1.81,
+        "gols_jogo": 2.05,
+        "gols_sofridos_jogo": 1.13,
+        "aproveitamento": 62.07,
+        "classificacao_media": 12.27,
+        "taxa_avanco_pct": 90.91,
+        "rotulo": "Elite técnica"
+      },
+      {
+        "cluster": 1,
+        "n": 14,
+        "posse": 42.93,
+        "precisao_passes": 83.57,
+        "passes_jogo": 369.34,
+        "chutes_jogo": 9.8,
+        "chutes_gol_jogo": 3.28,
+        "xg_jogo": 0.8,
+        "gols_jogo": 0.89,
+        "gols_sofridos_jogo": 1.67,
+        "aproveitamento": 24.8,
+        "classificacao_media": 31.86,
+        "taxa_avanco_pct": 57.14,
+        "rotulo": "Reativas de baixa posse"
+      },
+      {
+        "cluster": 2,
+        "n": 15,
+        "posse": 54.67,
+        "precisao_passes": 88.87,
+        "passes_jogo": 489.69,
+        "chutes_jogo": 11.82,
+        "chutes_gol_jogo": 4.4,
+        "xg_jogo": 1.27,
+        "gols_jogo": 1.59,
+        "gols_sofridos_jogo": 1.26,
+        "aproveitamento": 52.0,
+        "classificacao_media": 18.07,
+        "taxa_avanco_pct": 86.67,
+        "rotulo": "Equilibradas competitivas"
+      },
+      {
+        "cluster": 3,
+        "n": 8,
+        "posse": 35.0,
+        "precisao_passes": 78.75,
+        "passes_jogo": 296.74,
+        "chutes_jogo": 6.64,
+        "chutes_gol_jogo": 2.19,
+        "xg_jogo": 0.46,
+        "gols_jogo": 0.57,
+        "gols_sofridos_jogo": 2.94,
+        "aproveitamento": 11.39,
+        "classificacao_media": 40.25,
+        "taxa_avanco_pct": 12.5,
+        "rotulo": "Frágeis defensivamente"
+      }
+    ],
+    "membros": {
+      "Elite técnica": [
+        "Espanha",
+        "Argentina",
+        "Inglaterra",
+        "França",
+        "Bélgica",
+        "Colômbia",
+        "Brasil",
+        "Canadá",
+        "Alemanha",
+        "Senegal",
+        "Turquia"
+      ],
+      "Reativas de baixa posse": [
+        "Austrália",
+        "Congo (RDC)",
+        "Gana",
+        "África do Sul",
+        "Suécia",
+        "Áustria",
+        "Bósnia e Herzegovina",
+        "Cabo Verde",
+        "Irã",
+        "Escócia",
+        "Chéquia",
+        "Nova Zelândia",
+        "Panamá",
+        "Haiti"
+      ],
+      "Equilibradas competitivas": [
+        "Noruega",
+        "Suíça",
+        "Marrocos",
+        "México",
+        "Estados Unidos",
+        "Portugal",
+        "Egito",
+        "Países Baixos",
+        "Costa do Marfim",
+        "Croácia",
+        "Japão",
+        "Equador",
+        "Argélia",
+        "Coreia do Sul",
+        "Uruguai"
+      ],
+      "Frágeis defensivamente": [
+        "Paraguai",
+        "Arábia Saudita",
+        "Catar",
+        "Curaçao",
+        "Jordânia",
+        "Uzbequistão",
+        "Tunísia",
+        "Iraque"
+      ]
+    }
+  },
+  "pca": {
+    "variancia_explicada": [
+      0.712,
+      0.1
+    ],
+    "variancia_acumulada": 0.812,
+    "cargas": {
+      "posse_media": [
+        0.385,
+        -0.175
+      ],
+      "precisao_passes": [
+        0.36,
+        -0.132
+      ],
+      "passes_por_jogo": [
+        0.379,
+        -0.196
+      ],
+      "chutes_por_jogo": [
+        0.358,
+        0.112
+      ],
+      "chutes_a_gol_por_jogo": [
+        0.369,
+        0.311
+      ],
+      "xg_por_jogo": [
+        0.392,
+        0.135
+      ],
+      "gols_por_jogo": [
+        0.317,
+        0.504
+      ],
+      "gols_sofridos_por_jogo": [
+        -0.244,
+        0.73
+      ]
+    }
+  },
+  "regras_associacao": [
+    {
+      "antecedentes": "defesa_VAZADA + posse_BAIXA + volume_ofensivo_BAIXO",
+      "consequentes": "ELIMINADO_NOS_GRUPOS",
+      "suporte": 0.229,
+      "confianca": 0.917,
+      "lift": 2.75
+    },
+    {
+      "antecedentes": "defesa_VAZADA + passe_IMPRECISO + volume_ofensivo_BAIXO",
+      "consequentes": "ELIMINADO_NOS_GRUPOS",
+      "suporte": 0.229,
+      "confianca": 0.917,
+      "lift": 2.75
+    },
+    {
+      "antecedentes": "defesa_VAZADA + volume_ofensivo_BAIXO + xg_BAIXO",
+      "consequentes": "ELIMINADO_NOS_GRUPOS",
+      "suporte": 0.229,
+      "confianca": 0.846,
+      "lift": 2.538
+    },
+    {
+      "antecedentes": "defesa_VAZADA + volume_ofensivo_BAIXO",
+      "consequentes": "ELIMINADO_NOS_GRUPOS",
+      "suporte": 0.229,
+      "confianca": 0.786,
+      "lift": 2.357
+    },
+    {
+      "antecedentes": "defesa_SOLIDA + volume_ofensivo_ALTO",
+      "consequentes": "AVANCOU_MATA_MATA",
+      "suporte": 0.292,
+      "confianca": 1.0,
+      "lift": 1.5
+    },
+    {
+      "antecedentes": "defesa_SOLIDA + posse_ALTA",
+      "consequentes": "AVANCOU_MATA_MATA",
+      "suporte": 0.312,
+      "confianca": 0.938,
+      "lift": 1.406
+    },
+    {
+      "antecedentes": "defesa_SOLIDA + passe_PRECISO",
+      "consequentes": "AVANCOU_MATA_MATA",
+      "suporte": 0.271,
+      "confianca": 0.929,
+      "lift": 1.393
+    },
+    {
+      "antecedentes": "defesa_SOLIDA + indisciplina_BAIXA",
+      "consequentes": "AVANCOU_MATA_MATA",
+      "suporte": 0.25,
+      "confianca": 0.923,
+      "lift": 1.385
+    }
+  ],
+  "regras_associacao_todas": [
+    {
+      "antecedentes": "defesa_VAZADA + posse_BAIXA + volume_ofensivo_BAIXO",
+      "consequentes": "ELIMINADO_NOS_GRUPOS",
+      "suporte": 0.229,
+      "confianca": 0.917,
+      "lift": 2.75
+    },
+    {
+      "antecedentes": "defesa_VAZADA + passe_IMPRECISO + volume_ofensivo_BAIXO",
+      "consequentes": "ELIMINADO_NOS_GRUPOS",
+      "suporte": 0.229,
+      "confianca": 0.917,
+      "lift": 2.75
+    },
+    {
+      "antecedentes": "defesa_VAZADA + volume_ofensivo_BAIXO + xg_BAIXO",
+      "consequentes": "ELIMINADO_NOS_GRUPOS",
+      "suporte": 0.229,
+      "confianca": 0.846,
+      "lift": 2.538
+    },
+    {
+      "antecedentes": "defesa_VAZADA + volume_ofensivo_BAIXO",
+      "consequentes": "ELIMINADO_NOS_GRUPOS",
+      "suporte": 0.229,
+      "confianca": 0.786,
+      "lift": 2.357
+    },
+    {
+      "antecedentes": "defesa_VAZADA + posse_BAIXA",
+      "consequentes": "ELIMINADO_NOS_GRUPOS",
+      "suporte": 0.25,
+      "confianca": 0.75,
+      "lift": 2.25
+    },
+    {
+      "antecedentes": "defesa_VAZADA + passe_IMPRECISO",
+      "consequentes": "ELIMINADO_NOS_GRUPOS",
+      "suporte": 0.25,
+      "confianca": 0.75,
+      "lift": 2.25
+    },
+    {
+      "antecedentes": "defesa_VAZADA + indisciplina_ALTA",
+      "consequentes": "ELIMINADO_NOS_GRUPOS",
+      "suporte": 0.167,
+      "confianca": 0.727,
+      "lift": 2.182
+    },
+    {
+      "antecedentes": "defesa_VAZADA + xg_BAIXO",
+      "consequentes": "ELIMINADO_NOS_GRUPOS",
+      "suporte": 0.25,
+      "confianca": 0.706,
+      "lift": 2.118
+    },
+    {
+      "antecedentes": "defesa_SOLIDA + volume_ofensivo_ALTO",
+      "consequentes": "AVANCOU_MATA_MATA",
+      "suporte": 0.292,
+      "confianca": 1.0,
+      "lift": 1.5
+    },
+    {
+      "antecedentes": "defesa_SOLIDA + posse_ALTA",
+      "consequentes": "AVANCOU_MATA_MATA",
+      "suporte": 0.312,
+      "confianca": 0.938,
+      "lift": 1.406
+    },
+    {
+      "antecedentes": "defesa_SOLIDA + passe_PRECISO",
+      "consequentes": "AVANCOU_MATA_MATA",
+      "suporte": 0.271,
+      "confianca": 0.929,
+      "lift": 1.393
+    },
+    {
+      "antecedentes": "defesa_SOLIDA + indisciplina_BAIXA",
+      "consequentes": "AVANCOU_MATA_MATA",
+      "suporte": 0.25,
+      "confianca": 0.923,
+      "lift": 1.385
+    },
+    {
+      "antecedentes": "defesa_SOLIDA",
+      "consequentes": "AVANCOU_MATA_MATA",
+      "suporte": 0.458,
+      "confianca": 0.917,
+      "lift": 1.375
+    },
+    {
+      "antecedentes": "indisciplina_BAIXA + posse_ALTA + volume_ofensivo_ALTO",
+      "consequentes": "AVANCOU_MATA_MATA",
+      "suporte": 0.229,
+      "confianca": 0.917,
+      "lift": 1.375
+    },
+    {
+      "antecedentes": "indisciplina_BAIXA + volume_ofensivo_ALTO + xg_ALTO",
+      "consequentes": "AVANCOU_MATA_MATA",
+      "suporte": 0.229,
+      "confianca": 0.917,
+      "lift": 1.375
+    },
+    {
+      "antecedentes": "indisciplina_BAIXA + passe_PRECISO + volume_ofensivo_ALTO",
+      "consequentes": "AVANCOU_MATA_MATA",
+      "suporte": 0.208,
+      "confianca": 0.909,
+      "lift": 1.364
+    },
+    {
+      "antecedentes": "posse_ALTA + volume_ofensivo_ALTO",
+      "consequentes": "AVANCOU_MATA_MATA",
+      "suporte": 0.375,
+      "confianca": 0.9,
+      "lift": 1.35
+    },
+    {
+      "antecedentes": "volume_ofensivo_ALTO + xg_ALTO",
+      "consequentes": "AVANCOU_MATA_MATA",
+      "suporte": 0.375,
+      "confianca": 0.9,
+      "lift": 1.35
+    },
+    {
+      "antecedentes": "passe_PRECISO + volume_ofensivo_ALTO",
+      "consequentes": "AVANCOU_MATA_MATA",
+      "suporte": 0.333,
+      "confianca": 0.889,
+      "lift": 1.333
+    },
+    {
+      "antecedentes": "indisciplina_ALTA + posse_ALTA",
+      "consequentes": "AVANCOU_MATA_MATA",
+      "suporte": 0.167,
+      "confianca": 0.889,
+      "lift": 1.333
+    },
+    {
+      "antecedentes": "indisciplina_ALTA + volume_ofensivo_ALTO",
+      "consequentes": "AVANCOU_MATA_MATA",
+      "suporte": 0.167,
+      "confianca": 0.889,
+      "lift": 1.333
+    },
+    {
+      "antecedentes": "posse_ALTA",
+      "consequentes": "AVANCOU_MATA_MATA",
+      "suporte": 0.438,
+      "confianca": 0.875,
+      "lift": 1.312
+    },
+    {
+      "antecedentes": "volume_ofensivo_ALTO",
+      "consequentes": "AVANCOU_MATA_MATA",
+      "suporte": 0.438,
+      "confianca": 0.875,
+      "lift": 1.312
+    },
+    {
+      "antecedentes": "indisciplina_BAIXA + xg_ALTO",
+      "consequentes": "AVANCOU_MATA_MATA",
+      "suporte": 0.271,
+      "confianca": 0.867,
+      "lift": 1.3
+    },
+    {
+      "antecedentes": "passe_PRECISO",
+      "consequentes": "AVANCOU_MATA_MATA",
+      "suporte": 0.396,
+      "confianca": 0.864,
+      "lift": 1.295
+    },
+    {
+      "antecedentes": "xg_ALTO",
+      "consequentes": "AVANCOU_MATA_MATA",
+      "suporte": 0.417,
+      "confianca": 0.833,
+      "lift": 1.25
+    }
+  ],
+  "apriori_parametros": {
+    "suporte_minimo": 0.15,
+    "confianca_minima": 0.7,
+    "lift_minimo": 1.1,
+    "itemsets_frequentes": 288,
+    "regras_geradas": 1191,
+    "regras_uteis": 26,
+    "poda": "antecedentes redundantes descartados"
+  },
+  "arvore_decisao": {
+    "acuracia_loocv": 0.938,
+    "baseline_maioria": 0.667,
+    "precisao": 0.914,
+    "recall": 1.0,
+    "matriz_confusao": [
+      [
+        13,
+        3
+      ],
+      [
+        0,
+        32
+      ]
+    ],
+    "profundidade_maxima": 2,
+    "importancias": {
+      "gols_por_jogo": 0.605,
+      "gols_sofridos_por_jogo": 0.395
+    },
+    "regras_texto": "|--- gols_por_jogo <= 1.12\n|   |--- gols_sofridos_por_jogo <= 1.29\n|   |   |--- class: 1\n|   |--- gols_sofridos_por_jogo >  1.29\n|   |   |--- class: 0\n|--- gols_por_jogo >  1.12\n|   |--- class: 1\n"
+  }
+}

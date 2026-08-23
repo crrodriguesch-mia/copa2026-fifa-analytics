@@ -1,0 +1,577 @@
+{
+  "descritiva_gols_partida": {
+    "n": 104,
+    "media": 2.9615384615384617,
+    "mediana": 3.0,
+    "moda": 2,
+    "desvio_padrao": 1.8639298547318557,
+    "variancia": 3.4742345033607167,
+    "cv_pct": 62.93789119873799,
+    "minimo": 0,
+    "maximo": 10,
+    "q1": 2.0,
+    "q3": 4.0,
+    "amplitude_interquartil": 2.0,
+    "assimetria": 0.6990440073079414,
+    "curtose": 0.9972651014640528
+  },
+  "gols_por_etapa": {
+    "Grupos": {
+      "n": 72,
+      "media": 2.986,
+      "mediana": 3.0,
+      "desvio": 1.88
+    },
+    "Mata-mata": {
+      "n": 32,
+      "media": 2.906,
+      "mediana": 3.0,
+      "desvio": 1.855
+    }
+  },
+  "gols_por_fase": [
+    {
+      "fase": "Fase de grupos",
+      "n": 72,
+      "media": 2.986
+    },
+    {
+      "fase": "16 avos de final",
+      "n": 16,
+      "media": 2.625
+    },
+    {
+      "fase": "Oitavas de final",
+      "n": 8,
+      "media": 2.875
+    },
+    {
+      "fase": "Quartas de final",
+      "n": 4,
+      "media": 3.0
+    },
+    {
+      "fase": "Semifinal",
+      "n": 2,
+      "media": 2.5
+    },
+    {
+      "fase": "Disputa de 3º lugar",
+      "n": 1,
+      "media": 10.0
+    },
+    {
+      "fase": "Final",
+      "n": 1,
+      "media": 1.0
+    }
+  ],
+  "descritiva_indicadores": {
+    "gols_por_jogo": {
+      "mean": 1.321,
+      "median": 1.25,
+      "std": 0.744,
+      "min": 0.0,
+      "max": 2.75,
+      "cv_pct": 56.331
+    },
+    "gols_sofridos_por_jogo": {
+      "mean": 1.63,
+      "median": 1.292,
+      "std": 0.935,
+      "min": 0.125,
+      "max": 4.0,
+      "cv_pct": 57.369
+    },
+    "posse_media": {
+      "mean": 48.542,
+      "median": 50.0,
+      "std": 9.326,
+      "min": 30.0,
+      "max": 64.0,
+      "cv_pct": 19.213
+    },
+    "precisao_passes": {
+      "mean": 85.729,
+      "median": 87.0,
+      "std": 4.556,
+      "min": 72.0,
+      "max": 92.0,
+      "cv_pct": 5.314
+    },
+    "chutes_por_jogo": {
+      "mean": 11.64,
+      "median": 10.917,
+      "std": 4.13,
+      "min": 5.333,
+      "max": 23.667,
+      "cv_pct": 35.485
+    },
+    "chutes_a_gol_por_jogo": {
+      "mean": 4.16,
+      "median": 3.9,
+      "std": 1.704,
+      "min": 0.667,
+      "max": 7.875,
+      "cv_pct": 40.954
+    },
+    "xg_por_jogo": {
+      "mean": 1.123,
+      "median": 1.112,
+      "std": 0.511,
+      "min": 0.367,
+      "max": 2.067,
+      "cv_pct": 45.469
+    },
+    "aproveitamento_pct": {
+      "mean": 39.606,
+      "median": 33.333,
+      "std": 25.271,
+      "min": 0.0,
+      "max": 91.667,
+      "cv_pct": 63.804
+    },
+    "precisao_finalizacao": {
+      "mean": 35.631,
+      "median": 35.147,
+      "std": 8.47,
+      "min": 9.524,
+      "max": 51.724,
+      "cv_pct": 23.772
+    },
+    "cartoes_por_jogo": {
+      "mean": 1.386,
+      "median": 1.333,
+      "std": 0.546,
+      "min": 0.333,
+      "max": 2.4,
+      "cv_pct": 39.387
+    }
+  },
+  "poisson": {
+    "lambda_": 2.9615384615384617,
+    "categorias": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5+"
+    ],
+    "observado": [
+      8,
+      15,
+      23,
+      22,
+      14,
+      22
+    ],
+    "esperado": [
+      5.38,
+      15.94,
+      23.6,
+      23.29,
+      17.25,
+      18.54
+    ],
+    "chi2": 2.672,
+    "gl": 4,
+    "p_valor": 0.6142,
+    "conclusao": "Nao se rejeita H0: a distribuicao de gols e compativel com Poisson"
+  },
+  "correlacao_classificacao": [
+    {
+      "indicador": "aproveitamento_pct",
+      "rho_spearman": -0.973,
+      "p_valor": 0.0,
+      "significativo_5pct": true,
+      "n": 48
+    },
+    {
+      "indicador": "saldo_gols",
+      "rho_spearman": -0.911,
+      "p_valor": 0.0,
+      "significativo_5pct": true,
+      "n": 48
+    },
+    {
+      "indicador": "gols_por_jogo",
+      "rho_spearman": -0.719,
+      "p_valor": 0.0,
+      "significativo_5pct": true,
+      "n": 48
+    },
+    {
+      "indicador": "xg_por_jogo",
+      "rho_spearman": -0.676,
+      "p_valor": 0.0,
+      "significativo_5pct": true,
+      "n": 48
+    },
+    {
+      "indicador": "chutes_a_gol_por_jogo",
+      "rho_spearman": -0.658,
+      "p_valor": 0.0,
+      "significativo_5pct": true,
+      "n": 48
+    },
+    {
+      "indicador": "precisao_passes",
+      "rho_spearman": -0.647,
+      "p_valor": 0.0,
+      "significativo_5pct": true,
+      "n": 48
+    },
+    {
+      "indicador": "passes_por_jogo",
+      "rho_spearman": -0.631,
+      "p_valor": 0.0,
+      "significativo_5pct": true,
+      "n": 48
+    },
+    {
+      "indicador": "chutes_por_jogo",
+      "rho_spearman": -0.608,
+      "p_valor": 0.0,
+      "significativo_5pct": true,
+      "n": 48
+    },
+    {
+      "indicador": "posse_media",
+      "rho_spearman": -0.581,
+      "p_valor": 1e-05,
+      "significativo_5pct": true,
+      "n": 48
+    },
+    {
+      "indicador": "pct_clean_sheets",
+      "rho_spearman": -0.528,
+      "p_valor": 0.00011,
+      "significativo_5pct": true,
+      "n": 48
+    },
+    {
+      "indicador": "gols_menos_xg",
+      "rho_spearman": -0.471,
+      "p_valor": 0.00073,
+      "significativo_5pct": true,
+      "n": 48
+    },
+    {
+      "indicador": "precisao_finalizacao",
+      "rho_spearman": -0.286,
+      "p_valor": 0.04909,
+      "significativo_5pct": true,
+      "n": 48
+    },
+    {
+      "indicador": "cartoes_por_jogo",
+      "rho_spearman": 0.236,
+      "p_valor": 0.10623,
+      "significativo_5pct": false,
+      "n": 48
+    },
+    {
+      "indicador": "gols_sofridos_por_jogo",
+      "rho_spearman": 0.665,
+      "p_valor": 0.0,
+      "significativo_5pct": true,
+      "n": 48
+    }
+  ],
+  "matriz_correlacao": {
+    "variaveis": [
+      "gols_por_jogo",
+      "gols_sofridos_por_jogo",
+      "xg_por_jogo",
+      "posse_media",
+      "precisao_passes",
+      "chutes_por_jogo",
+      "chutes_a_gol_por_jogo",
+      "aproveitamento_pct",
+      "cartoes_por_jogo"
+    ],
+    "valores": [
+      [
+        1.0,
+        -0.276,
+        0.742,
+        0.562,
+        0.611,
+        0.562,
+        0.738,
+        0.703,
+        -0.417
+      ],
+      [
+        -0.276,
+        1.0,
+        -0.523,
+        -0.499,
+        -0.433,
+        -0.471,
+        -0.407,
+        -0.708,
+        -0.012
+      ],
+      [
+        0.742,
+        -0.523,
+        1.0,
+        0.794,
+        0.703,
+        0.874,
+        0.855,
+        0.722,
+        -0.313
+      ],
+      [
+        0.562,
+        -0.499,
+        0.794,
+        1.0,
+        0.874,
+        0.724,
+        0.73,
+        0.633,
+        -0.337
+      ],
+      [
+        0.611,
+        -0.433,
+        0.703,
+        0.874,
+        1.0,
+        0.587,
+        0.641,
+        0.623,
+        -0.316
+      ],
+      [
+        0.562,
+        -0.471,
+        0.874,
+        0.724,
+        0.587,
+        1.0,
+        0.822,
+        0.536,
+        -0.241
+      ],
+      [
+        0.738,
+        -0.407,
+        0.855,
+        0.73,
+        0.641,
+        0.822,
+        1.0,
+        0.666,
+        -0.297
+      ],
+      [
+        0.703,
+        -0.708,
+        0.722,
+        0.633,
+        0.623,
+        0.536,
+        0.666,
+        1.0,
+        -0.214
+      ],
+      [
+        -0.417,
+        -0.012,
+        -0.313,
+        -0.337,
+        -0.316,
+        -0.241,
+        -0.297,
+        -0.214,
+        1.0
+      ]
+    ]
+  },
+  "correlacao_xg_gols": {
+    "r_pearson": 0.92,
+    "p_valor": 2.5757871495358292e-20,
+    "r2": 0.846
+  },
+  "correlacao_posse_aproveitamento": {
+    "rho": 0.633,
+    "p_valor": 0.0
+  },
+  "comparacao_grupos": [
+    {
+      "indicador": "gols_por_jogo",
+      "mediana_avancou": 1.67,
+      "mediana_eliminado": 0.67,
+      "media_avancou": 1.65,
+      "media_eliminado": 0.67,
+      "U": 453.0,
+      "p_valor": 2e-05,
+      "efeito_r": 0.622,
+      "significativo_5pct": true
+    },
+    {
+      "indicador": "gols_sofridos_por_jogo",
+      "mediana_avancou": 1.23,
+      "mediana_eliminado": 2.33,
+      "media_avancou": 1.26,
+      "media_eliminado": 2.38,
+      "U": 92.5,
+      "p_valor": 0.00035,
+      "efeito_r": 0.516,
+      "significativo_5pct": true
+    },
+    {
+      "indicador": "precisao_passes",
+      "mediana_avancou": 88.0,
+      "mediana_eliminado": 81.5,
+      "media_avancou": 87.25,
+      "media_eliminado": 82.69,
+      "U": 413.0,
+      "p_valor": 0.00059,
+      "efeito_r": 0.496,
+      "significativo_5pct": true
+    },
+    {
+      "indicador": "chutes_a_gol_por_jogo",
+      "mediana_avancou": 4.75,
+      "mediana_eliminado": 3.0,
+      "media_avancou": 4.71,
+      "media_eliminado": 3.06,
+      "U": 409.0,
+      "p_valor": 0.00084,
+      "efeito_r": 0.483,
+      "significativo_5pct": true
+    },
+    {
+      "indicador": "passes_por_jogo",
+      "mediana_avancou": 472.69,
+      "mediana_eliminado": 338.17,
+      "media_avancou": 465.28,
+      "media_eliminado": 368.08,
+      "U": 405.0,
+      "p_valor": 0.00116,
+      "efeito_r": 0.47,
+      "significativo_5pct": true
+    },
+    {
+      "indicador": "xg_por_jogo",
+      "mediana_avancou": 1.21,
+      "mediana_eliminado": 0.6,
+      "media_avancou": 1.27,
+      "media_eliminado": 0.82,
+      "U": 388.0,
+      "p_valor": 0.00402,
+      "efeito_r": 0.417,
+      "significativo_5pct": true
+    },
+    {
+      "indicador": "posse_media",
+      "mediana_avancou": 52.5,
+      "mediana_eliminado": 41.0,
+      "media_avancou": 51.22,
+      "media_eliminado": 43.19,
+      "U": 385.5,
+      "p_valor": 0.00474,
+      "efeito_r": 0.409,
+      "significativo_5pct": true
+    },
+    {
+      "indicador": "cartoes_por_jogo",
+      "mediana_avancou": 1.25,
+      "mediana_eliminado": 1.67,
+      "media_avancou": 1.32,
+      "media_eliminado": 1.52,
+      "U": 186.0,
+      "p_valor": 0.12731,
+      "efeito_r": 0.221,
+      "significativo_5pct": false
+    },
+    {
+      "indicador": "precisao_finalizacao",
+      "mediana_avancou": 36.48,
+      "mediana_eliminado": 33.33,
+      "media_avancou": 36.98,
+      "media_eliminado": 32.93,
+      "U": 317.0,
+      "p_valor": 0.18564,
+      "efeito_r": 0.193,
+      "significativo_5pct": false
+    }
+  ],
+  "comparacao_gols_etapa": {
+    "media_grupos": 2.986,
+    "media_mata_mata": 2.906,
+    "U": 1210.5,
+    "p_valor": 0.6786,
+    "significativo_5pct": false
+  },
+  "associacao": {
+    "posse_x_avanco": {
+      "tabela": {
+        "0": {
+          "Baixa": 11,
+          "Media": 3,
+          "Alta": 2
+        },
+        "1": {
+          "Baixa": 5,
+          "Media": 15,
+          "Alta": 12
+        }
+      },
+      "chi2": 13.567,
+      "gl": 2,
+      "p_valor": 0.0011,
+      "v_cramer": 0.532,
+      "significativo_5pct": true
+    },
+    "clean_sheet_x_vitoria": {
+      "tabela": {
+        "0": {
+          "false": 109,
+          "true": 15
+        },
+        "1": {
+          "false": 44,
+          "true": 40
+        }
+      },
+      "chi2": 30.687,
+      "gl": 1,
+      "p_valor": 3.0326491905846254e-08,
+      "v_cramer": 0.384,
+      "prob_vitoria_com_clean_sheet": 0.727,
+      "prob_vitoria_sem_clean_sheet": 0.288,
+      "risco_relativo": 2.53
+    },
+    "confederacao_x_avanco": {
+      "tabela": {
+        "0": {
+          "AFC": 7,
+          "CAF": 1,
+          "CONCACAF": 3,
+          "CONMEBOL": 1,
+          "OFC": 1,
+          "UEFA": 3
+        },
+        "1": {
+          "AFC": 2,
+          "CAF": 9,
+          "CONCACAF": 3,
+          "CONMEBOL": 5,
+          "OFC": 0,
+          "UEFA": 13
+        }
+      },
+      "chi2": 15.481,
+      "gl": 5,
+      "p_valor": 0.0085,
+      "nota": "Celulas com frequencia esperada < 5; resultado exploratorio."
+    }
+  }
+}
