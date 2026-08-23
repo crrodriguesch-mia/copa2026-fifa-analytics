@@ -15,7 +15,6 @@ ESTUDO DE CASO – COPA DO MUNDO FIFA 2026
 - [Resultado em uma frase](#resultado-em-uma-frase)
 - [Dashboard](#dashboard)
 - [Estrutura do repositório](#estrutura-do-repositório)
-- [Como reproduzir](#como-reproduzir)
 - [A base de dados](#a-base-de-dados)
 - [Validação da base](#validação-da-base)
 - [Técnicas aplicadas](#técnicas-aplicadas)
@@ -26,7 +25,7 @@ ESTUDO DE CASO – COPA DO MUNDO FIFA 2026
 
 ## Resultado em uma frase
 
-Solidez defensiva e volume ofensivo qualificado — **não** posse de bola por si só — são os
+Solidez defensiva e volume ofensivo qualificado — **não** posse de bola por si só são os
 fatores associados ao avanço na competição. Três técnicas independentes (teste de Mann-Whitney,
 regras de associação e árvore de decisão) convergem para o mesmo par de variáveis.
 
