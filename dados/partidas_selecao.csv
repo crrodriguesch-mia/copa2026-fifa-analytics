@@ -1,0 +1,209 @@
+﻿id_partida,fase,fase_ordem,etapa,grupo,selecao,adversario,gols_pro,gols_contra,vencedor,decidida_por,mando,resultado,pontos,clean_sheet
+1,Fase de grupos,1,Grupos,A,México,África do Sul,2,0,México,Tempo normal,Casa,V,3,True
+2,Fase de grupos,1,Grupos,A,Coreia do Sul,Chéquia,2,1,Coreia do Sul,Tempo normal,Casa,V,3,False
+3,Fase de grupos,1,Grupos,A,Chéquia,África do Sul,1,1,,Tempo normal,Casa,E,1,False
+4,Fase de grupos,1,Grupos,A,México,Coreia do Sul,1,0,México,Tempo normal,Casa,V,3,True
+5,Fase de grupos,1,Grupos,A,África do Sul,Coreia do Sul,1,0,África do Sul,Tempo normal,Casa,V,3,True
+6,Fase de grupos,1,Grupos,A,Chéquia,México,0,3,México,Tempo normal,Casa,D,0,False
+7,Fase de grupos,1,Grupos,B,Canadá,Bósnia e Herzegovina,1,1,,Tempo normal,Casa,E,1,False
+8,Fase de grupos,1,Grupos,B,Catar,Suíça,1,1,,Tempo normal,Casa,E,1,False
+9,Fase de grupos,1,Grupos,B,Suíça,Bósnia e Herzegovina,4,1,Suíça,Tempo normal,Casa,V,3,False
+10,Fase de grupos,1,Grupos,B,Canadá,Catar,6,0,Canadá,Tempo normal,Casa,V,3,True
+11,Fase de grupos,1,Grupos,B,Bósnia e Herzegovina,Catar,3,1,Bósnia e Herzegovina,Tempo normal,Casa,V,3,False
+12,Fase de grupos,1,Grupos,B,Suíça,Canadá,2,1,Suíça,Tempo normal,Casa,V,3,False
+13,Fase de grupos,1,Grupos,C,Brasil,Marrocos,1,1,,Tempo normal,Casa,E,1,False
+14,Fase de grupos,1,Grupos,C,Haiti,Escócia,0,1,Escócia,Tempo normal,Casa,D,0,False
+15,Fase de grupos,1,Grupos,C,Escócia,Marrocos,0,1,Marrocos,Tempo normal,Casa,D,0,False
+16,Fase de grupos,1,Grupos,C,Brasil,Haiti,3,0,Brasil,Tempo normal,Casa,V,3,True
+17,Fase de grupos,1,Grupos,C,Marrocos,Haiti,4,2,Marrocos,Tempo normal,Casa,V,3,False
+18,Fase de grupos,1,Grupos,C,Escócia,Brasil,0,3,Brasil,Tempo normal,Casa,D,0,False
+19,Fase de grupos,1,Grupos,D,Estados Unidos,Paraguai,4,1,Estados Unidos,Tempo normal,Casa,V,3,False
+20,Fase de grupos,1,Grupos,D,Austrália,Turquia,2,0,Austrália,Tempo normal,Casa,V,3,True
+21,Fase de grupos,1,Grupos,D,Estados Unidos,Austrália,2,0,Estados Unidos,Tempo normal,Casa,V,3,True
+22,Fase de grupos,1,Grupos,D,Turquia,Paraguai,0,1,Paraguai,Tempo normal,Casa,D,0,False
+23,Fase de grupos,1,Grupos,D,Turquia,Estados Unidos,3,2,Turquia,Tempo normal,Casa,V,3,False
+24,Fase de grupos,1,Grupos,D,Paraguai,Austrália,0,0,,Tempo normal,Casa,E,1,True
+25,Fase de grupos,1,Grupos,E,Alemanha,Curaçao,7,1,Alemanha,Tempo normal,Casa,V,3,False
+26,Fase de grupos,1,Grupos,E,Costa do Marfim,Equador,1,0,Costa do Marfim,Tempo normal,Casa,V,3,True
+27,Fase de grupos,1,Grupos,E,Alemanha,Costa do Marfim,2,1,Alemanha,Tempo normal,Casa,V,3,False
+28,Fase de grupos,1,Grupos,E,Equador,Curaçao,0,0,,Tempo normal,Casa,E,1,True
+29,Fase de grupos,1,Grupos,E,Curaçao,Costa do Marfim,0,2,Costa do Marfim,Tempo normal,Casa,D,0,False
+30,Fase de grupos,1,Grupos,E,Equador,Alemanha,2,1,Equador,Tempo normal,Casa,V,3,False
+31,Fase de grupos,1,Grupos,F,Países Baixos,Japão,2,2,,Tempo normal,Casa,E,1,False
+32,Fase de grupos,1,Grupos,F,Suécia,Tunísia,5,1,Suécia,Tempo normal,Casa,V,3,False
+33,Fase de grupos,1,Grupos,F,Países Baixos,Suécia,5,1,Países Baixos,Tempo normal,Casa,V,3,False
+34,Fase de grupos,1,Grupos,F,Tunísia,Japão,0,4,Japão,Tempo normal,Casa,D,0,False
+35,Fase de grupos,1,Grupos,F,Japão,Suécia,1,1,,Tempo normal,Casa,E,1,False
+36,Fase de grupos,1,Grupos,F,Tunísia,Países Baixos,1,3,Países Baixos,Tempo normal,Casa,D,0,False
+37,Fase de grupos,1,Grupos,G,Egito,Bélgica,1,1,,Tempo normal,Casa,E,1,False
+38,Fase de grupos,1,Grupos,G,Irã,Nova Zelândia,2,2,,Tempo normal,Casa,E,1,False
+39,Fase de grupos,1,Grupos,G,Bélgica,Irã,0,0,,Tempo normal,Casa,E,1,True
+40,Fase de grupos,1,Grupos,G,Nova Zelândia,Egito,1,3,Egito,Tempo normal,Casa,D,0,False
+41,Fase de grupos,1,Grupos,G,Egito,Irã,1,1,,Tempo normal,Casa,E,1,False
+42,Fase de grupos,1,Grupos,G,Nova Zelândia,Bélgica,1,5,Bélgica,Tempo normal,Casa,D,0,False
+43,Fase de grupos,1,Grupos,H,Espanha,Cabo Verde,0,0,,Tempo normal,Casa,E,1,True
+44,Fase de grupos,1,Grupos,H,Arábia Saudita,Uruguai,1,1,,Tempo normal,Casa,E,1,False
+45,Fase de grupos,1,Grupos,H,Espanha,Arábia Saudita,4,0,Espanha,Tempo normal,Casa,V,3,True
+46,Fase de grupos,1,Grupos,H,Uruguai,Cabo Verde,2,2,,Tempo normal,Casa,E,1,False
+47,Fase de grupos,1,Grupos,H,Cabo Verde,Arábia Saudita,0,0,,Tempo normal,Casa,E,1,True
+48,Fase de grupos,1,Grupos,H,Uruguai,Espanha,0,1,Espanha,Tempo normal,Casa,D,0,False
+49,Fase de grupos,1,Grupos,I,França,Senegal,3,1,França,Tempo normal,Casa,V,3,False
+50,Fase de grupos,1,Grupos,I,Iraque,Noruega,1,4,Noruega,Tempo normal,Casa,D,0,False
+51,Fase de grupos,1,Grupos,I,Noruega,França,1,4,França,Tempo normal,Casa,D,0,False
+52,Fase de grupos,1,Grupos,I,Senegal,Iraque,5,0,Senegal,Tempo normal,Casa,V,3,True
+53,Fase de grupos,1,Grupos,I,França,Iraque,3,0,França,Tempo normal,Casa,V,3,True
+54,Fase de grupos,1,Grupos,I,Noruega,Senegal,3,2,Noruega,Tempo normal,Casa,V,3,False
+55,Fase de grupos,1,Grupos,J,Argentina,Argélia,3,0,Argentina,Tempo normal,Casa,V,3,True
+56,Fase de grupos,1,Grupos,J,Áustria,Jordânia,3,1,Áustria,Tempo normal,Casa,V,3,False
+57,Fase de grupos,1,Grupos,J,Argentina,Áustria,2,0,Argentina,Tempo normal,Casa,V,3,True
+58,Fase de grupos,1,Grupos,J,Jordânia,Argélia,1,2,Argélia,Tempo normal,Casa,D,0,False
+59,Fase de grupos,1,Grupos,J,Argélia,Áustria,3,3,,Tempo normal,Casa,E,1,False
+60,Fase de grupos,1,Grupos,J,Jordânia,Argentina,1,3,Argentina,Tempo normal,Casa,D,0,False
+61,Fase de grupos,1,Grupos,K,Portugal,Congo (RDC),1,1,,Tempo normal,Casa,E,1,False
+62,Fase de grupos,1,Grupos,K,Colômbia,Uzbequistão,3,1,Colômbia,Tempo normal,Casa,V,3,False
+63,Fase de grupos,1,Grupos,K,Portugal,Uzbequistão,5,0,Portugal,Tempo normal,Casa,V,3,True
+64,Fase de grupos,1,Grupos,K,Colômbia,Congo (RDC),1,0,Colômbia,Tempo normal,Casa,V,3,True
+65,Fase de grupos,1,Grupos,K,Colômbia,Portugal,0,0,,Tempo normal,Casa,E,1,True
+66,Fase de grupos,1,Grupos,K,Congo (RDC),Uzbequistão,3,1,Congo (RDC),Tempo normal,Casa,V,3,False
+67,Fase de grupos,1,Grupos,L,Inglaterra,Croácia,4,2,Inglaterra,Tempo normal,Casa,V,3,False
+68,Fase de grupos,1,Grupos,L,Gana,Panamá,1,0,Gana,Tempo normal,Casa,V,3,True
+69,Fase de grupos,1,Grupos,L,Inglaterra,Gana,0,0,,Tempo normal,Casa,E,1,True
+70,Fase de grupos,1,Grupos,L,Croácia,Panamá,1,0,Croácia,Tempo normal,Casa,V,3,True
+71,Fase de grupos,1,Grupos,L,Panamá,Inglaterra,0,2,Inglaterra,Tempo normal,Casa,D,0,False
+72,Fase de grupos,1,Grupos,L,Croácia,Gana,2,1,Croácia,Tempo normal,Casa,V,3,False
+73,16 avos de final,2,Mata-mata,,África do Sul,Canadá,0,1,Canadá,Tempo normal,Casa,D,0,False
+74,16 avos de final,2,Mata-mata,,Brasil,Japão,2,1,Brasil,Tempo normal,Casa,V,3,False
+75,16 avos de final,2,Mata-mata,,Alemanha,Paraguai,1,1,Paraguai,Penaltis,Casa,D,0,False
+76,16 avos de final,2,Mata-mata,,Países Baixos,Marrocos,1,1,Marrocos,Penaltis,Casa,D,0,False
+77,16 avos de final,2,Mata-mata,,Costa do Marfim,Noruega,1,2,Noruega,Tempo normal,Casa,D,0,False
+78,16 avos de final,2,Mata-mata,,França,Suécia,3,0,França,Tempo normal,Casa,V,3,True
+79,16 avos de final,2,Mata-mata,,México,Equador,2,0,México,Tempo normal,Casa,V,3,True
+80,16 avos de final,2,Mata-mata,,Inglaterra,Congo (RDC),2,1,Inglaterra,Tempo normal,Casa,V,3,False
+81,16 avos de final,2,Mata-mata,,Bélgica,Senegal,3,2,Bélgica,Prorrogacao,Casa,V,3,False
+82,16 avos de final,2,Mata-mata,,Estados Unidos,Bósnia e Herzegovina,2,0,Estados Unidos,Tempo normal,Casa,V,3,True
+83,16 avos de final,2,Mata-mata,,Espanha,Áustria,3,0,Espanha,Tempo normal,Casa,V,3,True
+84,16 avos de final,2,Mata-mata,,Portugal,Croácia,2,1,Portugal,Tempo normal,Casa,V,3,False
+85,16 avos de final,2,Mata-mata,,Suíça,Argélia,2,0,Suíça,Tempo normal,Casa,V,3,True
+86,16 avos de final,2,Mata-mata,,Austrália,Egito,1,1,Egito,Penaltis,Casa,D,0,False
+87,16 avos de final,2,Mata-mata,,Argentina,Cabo Verde,3,2,Argentina,Prorrogacao,Casa,V,3,False
+88,16 avos de final,2,Mata-mata,,Colômbia,Gana,1,0,Colômbia,Tempo normal,Casa,V,3,True
+89,Oitavas de final,3,Mata-mata,,Canadá,Marrocos,0,3,Marrocos,Tempo normal,Casa,D,0,False
+90,Oitavas de final,3,Mata-mata,,Paraguai,França,0,1,França,Tempo normal,Casa,D,0,False
+91,Oitavas de final,3,Mata-mata,,Brasil,Noruega,1,2,Noruega,Tempo normal,Casa,D,0,False
+92,Oitavas de final,3,Mata-mata,,México,Inglaterra,2,3,Inglaterra,Tempo normal,Casa,D,0,False
+93,Oitavas de final,3,Mata-mata,,Portugal,Espanha,0,1,Espanha,Tempo normal,Casa,D,0,False
+94,Oitavas de final,3,Mata-mata,,Estados Unidos,Bélgica,1,4,Bélgica,Tempo normal,Casa,D,0,False
+95,Oitavas de final,3,Mata-mata,,Argentina,Egito,3,2,Argentina,Tempo normal,Casa,V,3,False
+96,Oitavas de final,3,Mata-mata,,Suíça,Colômbia,0,0,Suíça,Penaltis,Casa,V,3,True
+97,Quartas de final,4,Mata-mata,,França,Marrocos,2,0,França,Tempo normal,Casa,V,3,True
+98,Quartas de final,4,Mata-mata,,Espanha,Bélgica,2,1,Espanha,Tempo normal,Casa,V,3,False
+99,Quartas de final,4,Mata-mata,,Noruega,Inglaterra,1,2,Inglaterra,Prorrogacao,Casa,D,0,False
+100,Quartas de final,4,Mata-mata,,Argentina,Suíça,3,1,Argentina,Prorrogacao,Casa,V,3,False
+101,Semifinal,5,Mata-mata,,França,Espanha,0,2,Espanha,Tempo normal,Casa,D,0,False
+102,Semifinal,5,Mata-mata,,Inglaterra,Argentina,1,2,Argentina,Tempo normal,Casa,D,0,False
+103,Disputa de 3º lugar,6,Mata-mata,,França,Inglaterra,4,6,Inglaterra,Tempo normal,Casa,D,0,False
+104,Final,7,Mata-mata,,Espanha,Argentina,1,0,Espanha,Prorrogacao,Casa,V,3,True
+1,Fase de grupos,1,Grupos,A,África do Sul,México,0,2,México,Tempo normal,Fora,D,0,False
+2,Fase de grupos,1,Grupos,A,Chéquia,Coreia do Sul,1,2,Coreia do Sul,Tempo normal,Fora,D,0,False
+3,Fase de grupos,1,Grupos,A,África do Sul,Chéquia,1,1,,Tempo normal,Fora,E,1,False
+4,Fase de grupos,1,Grupos,A,Coreia do Sul,México,0,1,México,Tempo normal,Fora,D,0,False
+5,Fase de grupos,1,Grupos,A,Coreia do Sul,África do Sul,0,1,África do Sul,Tempo normal,Fora,D,0,False
+6,Fase de grupos,1,Grupos,A,México,Chéquia,3,0,México,Tempo normal,Fora,V,3,True
+7,Fase de grupos,1,Grupos,B,Bósnia e Herzegovina,Canadá,1,1,,Tempo normal,Fora,E,1,False
+8,Fase de grupos,1,Grupos,B,Suíça,Catar,1,1,,Tempo normal,Fora,E,1,False
+9,Fase de grupos,1,Grupos,B,Bósnia e Herzegovina,Suíça,1,4,Suíça,Tempo normal,Fora,D,0,False
+10,Fase de grupos,1,Grupos,B,Catar,Canadá,0,6,Canadá,Tempo normal,Fora,D,0,False
+11,Fase de grupos,1,Grupos,B,Catar,Bósnia e Herzegovina,1,3,Bósnia e Herzegovina,Tempo normal,Fora,D,0,False
+12,Fase de grupos,1,Grupos,B,Canadá,Suíça,1,2,Suíça,Tempo normal,Fora,D,0,False
+13,Fase de grupos,1,Grupos,C,Marrocos,Brasil,1,1,,Tempo normal,Fora,E,1,False
+14,Fase de grupos,1,Grupos,C,Escócia,Haiti,1,0,Escócia,Tempo normal,Fora,V,3,True
+15,Fase de grupos,1,Grupos,C,Marrocos,Escócia,1,0,Marrocos,Tempo normal,Fora,V,3,True
+16,Fase de grupos,1,Grupos,C,Haiti,Brasil,0,3,Brasil,Tempo normal,Fora,D,0,False
+17,Fase de grupos,1,Grupos,C,Haiti,Marrocos,2,4,Marrocos,Tempo normal,Fora,D,0,False
+18,Fase de grupos,1,Grupos,C,Brasil,Escócia,3,0,Brasil,Tempo normal,Fora,V,3,True
+19,Fase de grupos,1,Grupos,D,Paraguai,Estados Unidos,1,4,Estados Unidos,Tempo normal,Fora,D,0,False
+20,Fase de grupos,1,Grupos,D,Turquia,Austrália,0,2,Austrália,Tempo normal,Fora,D,0,False
+21,Fase de grupos,1,Grupos,D,Austrália,Estados Unidos,0,2,Estados Unidos,Tempo normal,Fora,D,0,False
+22,Fase de grupos,1,Grupos,D,Paraguai,Turquia,1,0,Paraguai,Tempo normal,Fora,V,3,True
+23,Fase de grupos,1,Grupos,D,Estados Unidos,Turquia,2,3,Turquia,Tempo normal,Fora,D,0,False
+24,Fase de grupos,1,Grupos,D,Austrália,Paraguai,0,0,,Tempo normal,Fora,E,1,True
+25,Fase de grupos,1,Grupos,E,Curaçao,Alemanha,1,7,Alemanha,Tempo normal,Fora,D,0,False
+26,Fase de grupos,1,Grupos,E,Equador,Costa do Marfim,0,1,Costa do Marfim,Tempo normal,Fora,D,0,False
+27,Fase de grupos,1,Grupos,E,Costa do Marfim,Alemanha,1,2,Alemanha,Tempo normal,Fora,D,0,False
+28,Fase de grupos,1,Grupos,E,Curaçao,Equador,0,0,,Tempo normal,Fora,E,1,True
+29,Fase de grupos,1,Grupos,E,Costa do Marfim,Curaçao,2,0,Costa do Marfim,Tempo normal,Fora,V,3,True
+30,Fase de grupos,1,Grupos,E,Alemanha,Equador,1,2,Equador,Tempo normal,Fora,D,0,False
+31,Fase de grupos,1,Grupos,F,Japão,Países Baixos,2,2,,Tempo normal,Fora,E,1,False
+32,Fase de grupos,1,Grupos,F,Tunísia,Suécia,1,5,Suécia,Tempo normal,Fora,D,0,False
+33,Fase de grupos,1,Grupos,F,Suécia,Países Baixos,1,5,Países Baixos,Tempo normal,Fora,D,0,False
+34,Fase de grupos,1,Grupos,F,Japão,Tunísia,4,0,Japão,Tempo normal,Fora,V,3,True
+35,Fase de grupos,1,Grupos,F,Suécia,Japão,1,1,,Tempo normal,Fora,E,1,False
+36,Fase de grupos,1,Grupos,F,Países Baixos,Tunísia,3,1,Países Baixos,Tempo normal,Fora,V,3,False
+37,Fase de grupos,1,Grupos,G,Bélgica,Egito,1,1,,Tempo normal,Fora,E,1,False
+38,Fase de grupos,1,Grupos,G,Nova Zelândia,Irã,2,2,,Tempo normal,Fora,E,1,False
+39,Fase de grupos,1,Grupos,G,Irã,Bélgica,0,0,,Tempo normal,Fora,E,1,True
+40,Fase de grupos,1,Grupos,G,Egito,Nova Zelândia,3,1,Egito,Tempo normal,Fora,V,3,False
+41,Fase de grupos,1,Grupos,G,Irã,Egito,1,1,,Tempo normal,Fora,E,1,False
+42,Fase de grupos,1,Grupos,G,Bélgica,Nova Zelândia,5,1,Bélgica,Tempo normal,Fora,V,3,False
+43,Fase de grupos,1,Grupos,H,Cabo Verde,Espanha,0,0,,Tempo normal,Fora,E,1,True
+44,Fase de grupos,1,Grupos,H,Uruguai,Arábia Saudita,1,1,,Tempo normal,Fora,E,1,False
+45,Fase de grupos,1,Grupos,H,Arábia Saudita,Espanha,0,4,Espanha,Tempo normal,Fora,D,0,False
+46,Fase de grupos,1,Grupos,H,Cabo Verde,Uruguai,2,2,,Tempo normal,Fora,E,1,False
+47,Fase de grupos,1,Grupos,H,Arábia Saudita,Cabo Verde,0,0,,Tempo normal,Fora,E,1,True
+48,Fase de grupos,1,Grupos,H,Espanha,Uruguai,1,0,Espanha,Tempo normal,Fora,V,3,True
+49,Fase de grupos,1,Grupos,I,Senegal,França,1,3,França,Tempo normal,Fora,D,0,False
+50,Fase de grupos,1,Grupos,I,Noruega,Iraque,4,1,Noruega,Tempo normal,Fora,V,3,False
+51,Fase de grupos,1,Grupos,I,França,Noruega,4,1,França,Tempo normal,Fora,V,3,False
+52,Fase de grupos,1,Grupos,I,Iraque,Senegal,0,5,Senegal,Tempo normal,Fora,D,0,False
+53,Fase de grupos,1,Grupos,I,Iraque,França,0,3,França,Tempo normal,Fora,D,0,False
+54,Fase de grupos,1,Grupos,I,Senegal,Noruega,2,3,Noruega,Tempo normal,Fora,D,0,False
+55,Fase de grupos,1,Grupos,J,Argélia,Argentina,0,3,Argentina,Tempo normal,Fora,D,0,False
+56,Fase de grupos,1,Grupos,J,Jordânia,Áustria,1,3,Áustria,Tempo normal,Fora,D,0,False
+57,Fase de grupos,1,Grupos,J,Áustria,Argentina,0,2,Argentina,Tempo normal,Fora,D,0,False
+58,Fase de grupos,1,Grupos,J,Argélia,Jordânia,2,1,Argélia,Tempo normal,Fora,V,3,False
+59,Fase de grupos,1,Grupos,J,Áustria,Argélia,3,3,,Tempo normal,Fora,E,1,False
+60,Fase de grupos,1,Grupos,J,Argentina,Jordânia,3,1,Argentina,Tempo normal,Fora,V,3,False
+61,Fase de grupos,1,Grupos,K,Congo (RDC),Portugal,1,1,,Tempo normal,Fora,E,1,False
+62,Fase de grupos,1,Grupos,K,Uzbequistão,Colômbia,1,3,Colômbia,Tempo normal,Fora,D,0,False
+63,Fase de grupos,1,Grupos,K,Uzbequistão,Portugal,0,5,Portugal,Tempo normal,Fora,D,0,False
+64,Fase de grupos,1,Grupos,K,Congo (RDC),Colômbia,0,1,Colômbia,Tempo normal,Fora,D,0,False
+65,Fase de grupos,1,Grupos,K,Portugal,Colômbia,0,0,,Tempo normal,Fora,E,1,True
+66,Fase de grupos,1,Grupos,K,Uzbequistão,Congo (RDC),1,3,Congo (RDC),Tempo normal,Fora,D,0,False
+67,Fase de grupos,1,Grupos,L,Croácia,Inglaterra,2,4,Inglaterra,Tempo normal,Fora,D,0,False
+68,Fase de grupos,1,Grupos,L,Panamá,Gana,0,1,Gana,Tempo normal,Fora,D,0,False
+69,Fase de grupos,1,Grupos,L,Gana,Inglaterra,0,0,,Tempo normal,Fora,E,1,True
+70,Fase de grupos,1,Grupos,L,Panamá,Croácia,0,1,Croácia,Tempo normal,Fora,D,0,False
+71,Fase de grupos,1,Grupos,L,Inglaterra,Panamá,2,0,Inglaterra,Tempo normal,Fora,V,3,True
+72,Fase de grupos,1,Grupos,L,Gana,Croácia,1,2,Croácia,Tempo normal,Fora,D,0,False
+73,16 avos de final,2,Mata-mata,,Canadá,África do Sul,1,0,Canadá,Tempo normal,Fora,V,3,True
+74,16 avos de final,2,Mata-mata,,Japão,Brasil,1,2,Brasil,Tempo normal,Fora,D,0,False
+75,16 avos de final,2,Mata-mata,,Paraguai,Alemanha,1,1,Paraguai,Penaltis,Fora,V,3,False
+76,16 avos de final,2,Mata-mata,,Marrocos,Países Baixos,1,1,Marrocos,Penaltis,Fora,V,3,False
+77,16 avos de final,2,Mata-mata,,Noruega,Costa do Marfim,2,1,Noruega,Tempo normal,Fora,V,3,False
+78,16 avos de final,2,Mata-mata,,Suécia,França,0,3,França,Tempo normal,Fora,D,0,False
+79,16 avos de final,2,Mata-mata,,Equador,México,0,2,México,Tempo normal,Fora,D,0,False
+80,16 avos de final,2,Mata-mata,,Congo (RDC),Inglaterra,1,2,Inglaterra,Tempo normal,Fora,D,0,False
+81,16 avos de final,2,Mata-mata,,Senegal,Bélgica,2,3,Bélgica,Prorrogacao,Fora,D,0,False
+82,16 avos de final,2,Mata-mata,,Bósnia e Herzegovina,Estados Unidos,0,2,Estados Unidos,Tempo normal,Fora,D,0,False
+83,16 avos de final,2,Mata-mata,,Áustria,Espanha,0,3,Espanha,Tempo normal,Fora,D,0,False
+84,16 avos de final,2,Mata-mata,,Croácia,Portugal,1,2,Portugal,Tempo normal,Fora,D,0,False
+85,16 avos de final,2,Mata-mata,,Argélia,Suíça,0,2,Suíça,Tempo normal,Fora,D,0,False
+86,16 avos de final,2,Mata-mata,,Egito,Austrália,1,1,Egito,Penaltis,Fora,V,3,False
+87,16 avos de final,2,Mata-mata,,Cabo Verde,Argentina,2,3,Argentina,Prorrogacao,Fora,D,0,False
+88,16 avos de final,2,Mata-mata,,Gana,Colômbia,0,1,Colômbia,Tempo normal,Fora,D,0,False
+89,Oitavas de final,3,Mata-mata,,Marrocos,Canadá,3,0,Marrocos,Tempo normal,Fora,V,3,True
+90,Oitavas de final,3,Mata-mata,,França,Paraguai,1,0,França,Tempo normal,Fora,V,3,True
+91,Oitavas de final,3,Mata-mata,,Noruega,Brasil,2,1,Noruega,Tempo normal,Fora,V,3,False
+92,Oitavas de final,3,Mata-mata,,Inglaterra,México,3,2,Inglaterra,Tempo normal,Fora,V,3,False
+93,Oitavas de final,3,Mata-mata,,Espanha,Portugal,1,0,Espanha,Tempo normal,Fora,V,3,True
+94,Oitavas de final,3,Mata-mata,,Bélgica,Estados Unidos,4,1,Bélgica,Tempo normal,Fora,V,3,False
+95,Oitavas de final,3,Mata-mata,,Egito,Argentina,2,3,Argentina,Tempo normal,Fora,D,0,False
+96,Oitavas de final,3,Mata-mata,,Colômbia,Suíça,0,0,Suíça,Penaltis,Fora,D,0,True
+97,Quartas de final,4,Mata-mata,,Marrocos,França,0,2,França,Tempo normal,Fora,D,0,False
+98,Quartas de final,4,Mata-mata,,Bélgica,Espanha,1,2,Espanha,Tempo normal,Fora,D,0,False
+99,Quartas de final,4,Mata-mata,,Inglaterra,Noruega,2,1,Inglaterra,Prorrogacao,Fora,V,3,False
+100,Quartas de final,4,Mata-mata,,Suíça,Argentina,1,3,Argentina,Prorrogacao,Fora,D,0,False
+101,Semifinal,5,Mata-mata,,Espanha,França,2,0,Espanha,Tempo normal,Fora,V,3,True
+102,Semifinal,5,Mata-mata,,Argentina,Inglaterra,2,1,Argentina,Tempo normal,Fora,V,3,False
+103,Disputa de 3º lugar,6,Mata-mata,,Inglaterra,França,6,4,Inglaterra,Tempo normal,Fora,V,3,False
+104,Final,7,Mata-mata,,Argentina,Espanha,0,1,Espanha,Prorrogacao,Fora,D,0,False

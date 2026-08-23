@@ -1,0 +1,105 @@
+﻿id_partida,fase,grupo,rodada,data,estadio,selecao_casa,selecao_fora,gols_casa,gols_fora,prorrogacao,penaltis,fase_ordem,etapa,total_gols,saldo_partida,empate_tempo_normal,ambas_marcaram,over_2_5,clean_sheet_casa,clean_sheet_fora,vencedor,decidida_por
+1,Fase de grupos,A,1.0,,,México,África do Sul,2,0,False,,1,Grupos,2,2,False,False,False,True,False,México,Tempo normal
+2,Fase de grupos,A,1.0,,,Coreia do Sul,Chéquia,2,1,False,,1,Grupos,3,1,False,True,True,False,False,Coreia do Sul,Tempo normal
+3,Fase de grupos,A,2.0,,,Chéquia,África do Sul,1,1,False,,1,Grupos,2,0,True,True,False,False,False,,Tempo normal
+4,Fase de grupos,A,2.0,,,México,Coreia do Sul,1,0,False,,1,Grupos,1,1,False,False,False,True,False,México,Tempo normal
+5,Fase de grupos,A,3.0,,,África do Sul,Coreia do Sul,1,0,False,,1,Grupos,1,1,False,False,False,True,False,África do Sul,Tempo normal
+6,Fase de grupos,A,3.0,,,Chéquia,México,0,3,False,,1,Grupos,3,3,False,False,True,False,True,México,Tempo normal
+7,Fase de grupos,B,1.0,,,Canadá,Bósnia e Herzegovina,1,1,False,,1,Grupos,2,0,True,True,False,False,False,,Tempo normal
+8,Fase de grupos,B,1.0,,,Catar,Suíça,1,1,False,,1,Grupos,2,0,True,True,False,False,False,,Tempo normal
+9,Fase de grupos,B,2.0,,,Suíça,Bósnia e Herzegovina,4,1,False,,1,Grupos,5,3,False,True,True,False,False,Suíça,Tempo normal
+10,Fase de grupos,B,2.0,,,Canadá,Catar,6,0,False,,1,Grupos,6,6,False,False,True,True,False,Canadá,Tempo normal
+11,Fase de grupos,B,3.0,,,Bósnia e Herzegovina,Catar,3,1,False,,1,Grupos,4,2,False,True,True,False,False,Bósnia e Herzegovina,Tempo normal
+12,Fase de grupos,B,3.0,,,Suíça,Canadá,2,1,False,,1,Grupos,3,1,False,True,True,False,False,Suíça,Tempo normal
+13,Fase de grupos,C,1.0,,,Brasil,Marrocos,1,1,False,,1,Grupos,2,0,True,True,False,False,False,,Tempo normal
+14,Fase de grupos,C,1.0,,,Haiti,Escócia,0,1,False,,1,Grupos,1,1,False,False,False,False,True,Escócia,Tempo normal
+15,Fase de grupos,C,2.0,,,Escócia,Marrocos,0,1,False,,1,Grupos,1,1,False,False,False,False,True,Marrocos,Tempo normal
+16,Fase de grupos,C,2.0,,,Brasil,Haiti,3,0,False,,1,Grupos,3,3,False,False,True,True,False,Brasil,Tempo normal
+17,Fase de grupos,C,3.0,,,Marrocos,Haiti,4,2,False,,1,Grupos,6,2,False,True,True,False,False,Marrocos,Tempo normal
+18,Fase de grupos,C,3.0,,,Escócia,Brasil,0,3,False,,1,Grupos,3,3,False,False,True,False,True,Brasil,Tempo normal
+19,Fase de grupos,D,1.0,,,Estados Unidos,Paraguai,4,1,False,,1,Grupos,5,3,False,True,True,False,False,Estados Unidos,Tempo normal
+20,Fase de grupos,D,1.0,,,Austrália,Turquia,2,0,False,,1,Grupos,2,2,False,False,False,True,False,Austrália,Tempo normal
+21,Fase de grupos,D,2.0,,,Estados Unidos,Austrália,2,0,False,,1,Grupos,2,2,False,False,False,True,False,Estados Unidos,Tempo normal
+22,Fase de grupos,D,2.0,,,Turquia,Paraguai,0,1,False,,1,Grupos,1,1,False,False,False,False,True,Paraguai,Tempo normal
+23,Fase de grupos,D,3.0,,,Turquia,Estados Unidos,3,2,False,,1,Grupos,5,1,False,True,True,False,False,Turquia,Tempo normal
+24,Fase de grupos,D,3.0,,,Paraguai,Austrália,0,0,False,,1,Grupos,0,0,True,False,False,True,True,,Tempo normal
+25,Fase de grupos,E,1.0,,,Alemanha,Curaçao,7,1,False,,1,Grupos,8,6,False,True,True,False,False,Alemanha,Tempo normal
+26,Fase de grupos,E,1.0,,,Costa do Marfim,Equador,1,0,False,,1,Grupos,1,1,False,False,False,True,False,Costa do Marfim,Tempo normal
+27,Fase de grupos,E,2.0,,,Alemanha,Costa do Marfim,2,1,False,,1,Grupos,3,1,False,True,True,False,False,Alemanha,Tempo normal
+28,Fase de grupos,E,2.0,,,Equador,Curaçao,0,0,False,,1,Grupos,0,0,True,False,False,True,True,,Tempo normal
+29,Fase de grupos,E,3.0,,,Curaçao,Costa do Marfim,0,2,False,,1,Grupos,2,2,False,False,False,False,True,Costa do Marfim,Tempo normal
+30,Fase de grupos,E,3.0,,,Equador,Alemanha,2,1,False,,1,Grupos,3,1,False,True,True,False,False,Equador,Tempo normal
+31,Fase de grupos,F,1.0,,,Países Baixos,Japão,2,2,False,,1,Grupos,4,0,True,True,True,False,False,,Tempo normal
+32,Fase de grupos,F,1.0,,,Suécia,Tunísia,5,1,False,,1,Grupos,6,4,False,True,True,False,False,Suécia,Tempo normal
+33,Fase de grupos,F,2.0,,,Países Baixos,Suécia,5,1,False,,1,Grupos,6,4,False,True,True,False,False,Países Baixos,Tempo normal
+34,Fase de grupos,F,2.0,,,Tunísia,Japão,0,4,False,,1,Grupos,4,4,False,False,True,False,True,Japão,Tempo normal
+35,Fase de grupos,F,3.0,,,Japão,Suécia,1,1,False,,1,Grupos,2,0,True,True,False,False,False,,Tempo normal
+36,Fase de grupos,F,3.0,,,Tunísia,Países Baixos,1,3,False,,1,Grupos,4,2,False,True,True,False,False,Países Baixos,Tempo normal
+37,Fase de grupos,G,1.0,,,Egito,Bélgica,1,1,False,,1,Grupos,2,0,True,True,False,False,False,,Tempo normal
+38,Fase de grupos,G,1.0,,,Irã,Nova Zelândia,2,2,False,,1,Grupos,4,0,True,True,True,False,False,,Tempo normal
+39,Fase de grupos,G,2.0,,,Bélgica,Irã,0,0,False,,1,Grupos,0,0,True,False,False,True,True,,Tempo normal
+40,Fase de grupos,G,2.0,,,Nova Zelândia,Egito,1,3,False,,1,Grupos,4,2,False,True,True,False,False,Egito,Tempo normal
+41,Fase de grupos,G,3.0,,,Egito,Irã,1,1,False,,1,Grupos,2,0,True,True,False,False,False,,Tempo normal
+42,Fase de grupos,G,3.0,,,Nova Zelândia,Bélgica,1,5,False,,1,Grupos,6,4,False,True,True,False,False,Bélgica,Tempo normal
+43,Fase de grupos,H,1.0,,,Espanha,Cabo Verde,0,0,False,,1,Grupos,0,0,True,False,False,True,True,,Tempo normal
+44,Fase de grupos,H,1.0,,,Arábia Saudita,Uruguai,1,1,False,,1,Grupos,2,0,True,True,False,False,False,,Tempo normal
+45,Fase de grupos,H,2.0,,,Espanha,Arábia Saudita,4,0,False,,1,Grupos,4,4,False,False,True,True,False,Espanha,Tempo normal
+46,Fase de grupos,H,2.0,,,Uruguai,Cabo Verde,2,2,False,,1,Grupos,4,0,True,True,True,False,False,,Tempo normal
+47,Fase de grupos,H,3.0,,,Cabo Verde,Arábia Saudita,0,0,False,,1,Grupos,0,0,True,False,False,True,True,,Tempo normal
+48,Fase de grupos,H,3.0,,,Uruguai,Espanha,0,1,False,,1,Grupos,1,1,False,False,False,False,True,Espanha,Tempo normal
+49,Fase de grupos,I,1.0,,,França,Senegal,3,1,False,,1,Grupos,4,2,False,True,True,False,False,França,Tempo normal
+50,Fase de grupos,I,1.0,,,Iraque,Noruega,1,4,False,,1,Grupos,5,3,False,True,True,False,False,Noruega,Tempo normal
+51,Fase de grupos,I,2.0,,,Noruega,França,1,4,False,,1,Grupos,5,3,False,True,True,False,False,França,Tempo normal
+52,Fase de grupos,I,2.0,,,Senegal,Iraque,5,0,False,,1,Grupos,5,5,False,False,True,True,False,Senegal,Tempo normal
+53,Fase de grupos,I,3.0,,,França,Iraque,3,0,False,,1,Grupos,3,3,False,False,True,True,False,França,Tempo normal
+54,Fase de grupos,I,3.0,,,Noruega,Senegal,3,2,False,,1,Grupos,5,1,False,True,True,False,False,Noruega,Tempo normal
+55,Fase de grupos,J,1.0,,,Argentina,Argélia,3,0,False,,1,Grupos,3,3,False,False,True,True,False,Argentina,Tempo normal
+56,Fase de grupos,J,1.0,,,Áustria,Jordânia,3,1,False,,1,Grupos,4,2,False,True,True,False,False,Áustria,Tempo normal
+57,Fase de grupos,J,2.0,,,Argentina,Áustria,2,0,False,,1,Grupos,2,2,False,False,False,True,False,Argentina,Tempo normal
+58,Fase de grupos,J,2.0,,,Jordânia,Argélia,1,2,False,,1,Grupos,3,1,False,True,True,False,False,Argélia,Tempo normal
+59,Fase de grupos,J,3.0,,,Argélia,Áustria,3,3,False,,1,Grupos,6,0,True,True,True,False,False,,Tempo normal
+60,Fase de grupos,J,3.0,,,Jordânia,Argentina,1,3,False,,1,Grupos,4,2,False,True,True,False,False,Argentina,Tempo normal
+61,Fase de grupos,K,1.0,,,Portugal,Congo (RDC),1,1,False,,1,Grupos,2,0,True,True,False,False,False,,Tempo normal
+62,Fase de grupos,K,1.0,,,Colômbia,Uzbequistão,3,1,False,,1,Grupos,4,2,False,True,True,False,False,Colômbia,Tempo normal
+63,Fase de grupos,K,2.0,,,Portugal,Uzbequistão,5,0,False,,1,Grupos,5,5,False,False,True,True,False,Portugal,Tempo normal
+64,Fase de grupos,K,2.0,,,Colômbia,Congo (RDC),1,0,False,,1,Grupos,1,1,False,False,False,True,False,Colômbia,Tempo normal
+65,Fase de grupos,K,3.0,,,Colômbia,Portugal,0,0,False,,1,Grupos,0,0,True,False,False,True,True,,Tempo normal
+66,Fase de grupos,K,3.0,,,Congo (RDC),Uzbequistão,3,1,False,,1,Grupos,4,2,False,True,True,False,False,Congo (RDC),Tempo normal
+67,Fase de grupos,L,1.0,,,Inglaterra,Croácia,4,2,False,,1,Grupos,6,2,False,True,True,False,False,Inglaterra,Tempo normal
+68,Fase de grupos,L,1.0,,,Gana,Panamá,1,0,False,,1,Grupos,1,1,False,False,False,True,False,Gana,Tempo normal
+69,Fase de grupos,L,2.0,,,Inglaterra,Gana,0,0,False,,1,Grupos,0,0,True,False,False,True,True,,Tempo normal
+70,Fase de grupos,L,2.0,,,Croácia,Panamá,1,0,False,,1,Grupos,1,1,False,False,False,True,False,Croácia,Tempo normal
+71,Fase de grupos,L,3.0,,,Panamá,Inglaterra,0,2,False,,1,Grupos,2,2,False,False,False,False,True,Inglaterra,Tempo normal
+72,Fase de grupos,L,3.0,,,Croácia,Gana,2,1,False,,1,Grupos,3,1,False,True,True,False,False,Croácia,Tempo normal
+73,16 avos de final,,,2026-06-28,"SoFi Stadium, Inglewood (Los Angeles)",África do Sul,Canadá,0,1,False,,2,Mata-mata,1,1,False,False,False,False,True,Canadá,Tempo normal
+74,16 avos de final,,,2026-06-29,"NRG Stadium, Houston",Brasil,Japão,2,1,False,,2,Mata-mata,3,1,False,True,True,False,False,Brasil,Tempo normal
+75,16 avos de final,,,2026-06-29,"Gillette Stadium, Foxborough (Boston)",Alemanha,Paraguai,1,1,True,3-4,2,Mata-mata,2,0,True,True,False,False,False,Paraguai,Penaltis
+76,16 avos de final,,,2026-06-29,"Estadio BBVA, Monterrey",Países Baixos,Marrocos,1,1,True,2-3,2,Mata-mata,2,0,True,True,False,False,False,Marrocos,Penaltis
+77,16 avos de final,,,2026-06-30,"AT&T Stadium, Arlington (Dallas)",Costa do Marfim,Noruega,1,2,False,,2,Mata-mata,3,1,False,True,True,False,False,Noruega,Tempo normal
+78,16 avos de final,,,2026-06-30,"MetLife Stadium, East Rutherford (Nova York/Nova Jersey)",França,Suécia,3,0,False,,2,Mata-mata,3,3,False,False,True,True,False,França,Tempo normal
+79,16 avos de final,,,2026-06-30,"Estadio Azteca, Cidade do México",México,Equador,2,0,False,,2,Mata-mata,2,2,False,False,False,True,False,México,Tempo normal
+80,16 avos de final,,,2026-07-01,"Mercedes-Benz Stadium, Atlanta",Inglaterra,Congo (RDC),2,1,False,,2,Mata-mata,3,1,False,True,True,False,False,Inglaterra,Tempo normal
+81,16 avos de final,,,2026-07-01,"Lumen Field, Seattle",Bélgica,Senegal,3,2,True,,2,Mata-mata,5,1,False,True,True,False,False,Bélgica,Prorrogacao
+82,16 avos de final,,,2026-07-01,"Levi's Stadium, Santa Clara (São Francisco)",Estados Unidos,Bósnia e Herzegovina,2,0,False,,2,Mata-mata,2,2,False,False,False,True,False,Estados Unidos,Tempo normal
+83,16 avos de final,,,2026-07-02,"SoFi Stadium, Inglewood (Los Angeles)",Espanha,Áustria,3,0,False,,2,Mata-mata,3,3,False,False,True,True,False,Espanha,Tempo normal
+84,16 avos de final,,,2026-07-02,"BMO Field, Toronto",Portugal,Croácia,2,1,False,,2,Mata-mata,3,1,False,True,True,False,False,Portugal,Tempo normal
+85,16 avos de final,,,2026-07-02,"BC Place, Vancouver",Suíça,Argélia,2,0,False,,2,Mata-mata,2,2,False,False,False,True,False,Suíça,Tempo normal
+86,16 avos de final,,,2026-07-03,"AT&T Stadium, Arlington (Dallas)",Austrália,Egito,1,1,True,2-4,2,Mata-mata,2,0,True,True,False,False,False,Egito,Penaltis
+87,16 avos de final,,,2026-07-03,"Hard Rock Stadium, Miami Gardens",Argentina,Cabo Verde,3,2,True,,2,Mata-mata,5,1,False,True,True,False,False,Argentina,Prorrogacao
+88,16 avos de final,,,2026-07-03,"Arrowhead Stadium, Kansas City",Colômbia,Gana,1,0,False,,2,Mata-mata,1,1,False,False,False,True,False,Colômbia,Tempo normal
+89,Oitavas de final,,,2026-07-04,"NRG Stadium, Houston",Canadá,Marrocos,0,3,False,,3,Mata-mata,3,3,False,False,True,False,True,Marrocos,Tempo normal
+90,Oitavas de final,,,2026-07-04,"Lincoln Financial Field, Filadélfia",Paraguai,França,0,1,False,,3,Mata-mata,1,1,False,False,False,False,True,França,Tempo normal
+91,Oitavas de final,,,2026-07-05,"MetLife Stadium, East Rutherford (Nova York/Nova Jersey)",Brasil,Noruega,1,2,False,,3,Mata-mata,3,1,False,True,True,False,False,Noruega,Tempo normal
+92,Oitavas de final,,,2026-07-05,"Estadio Azteca, Cidade do México",México,Inglaterra,2,3,False,,3,Mata-mata,5,1,False,True,True,False,False,Inglaterra,Tempo normal
+93,Oitavas de final,,,2026-07-06,"AT&T Stadium, Arlington (Dallas)",Portugal,Espanha,0,1,False,,3,Mata-mata,1,1,False,False,False,False,True,Espanha,Tempo normal
+94,Oitavas de final,,,2026-07-06,"Lumen Field, Seattle",Estados Unidos,Bélgica,1,4,False,,3,Mata-mata,5,3,False,True,True,False,False,Bélgica,Tempo normal
+95,Oitavas de final,,,2026-07-07,"Mercedes-Benz Stadium, Atlanta",Argentina,Egito,3,2,False,,3,Mata-mata,5,1,False,True,True,False,False,Argentina,Tempo normal
+96,Oitavas de final,,,2026-07-07,"BC Place, Vancouver",Suíça,Colômbia,0,0,True,4-3,3,Mata-mata,0,0,True,False,False,True,True,Suíça,Penaltis
+97,Quartas de final,,,2026-07-09,"Gillette Stadium, Foxborough (Boston)",França,Marrocos,2,0,False,,4,Mata-mata,2,2,False,False,False,True,False,França,Tempo normal
+98,Quartas de final,,,2026-07-10,"SoFi Stadium, Inglewood (Los Angeles)",Espanha,Bélgica,2,1,False,,4,Mata-mata,3,1,False,True,True,False,False,Espanha,Tempo normal
+99,Quartas de final,,,2026-07-11,"Hard Rock Stadium, Miami Gardens",Noruega,Inglaterra,1,2,True,,4,Mata-mata,3,1,False,True,True,False,False,Inglaterra,Prorrogacao
+100,Quartas de final,,,2026-07-11,"Arrowhead Stadium, Kansas City",Argentina,Suíça,3,1,True,,4,Mata-mata,4,2,False,True,True,False,False,Argentina,Prorrogacao
+101,Semifinal,,,2026-07-14,"AT&T Stadium, Arlington (Dallas)",França,Espanha,0,2,False,,5,Mata-mata,2,2,False,False,False,False,True,Espanha,Tempo normal
+102,Semifinal,,,2026-07-15,"Mercedes-Benz Stadium, Atlanta",Inglaterra,Argentina,1,2,False,,5,Mata-mata,3,1,False,True,True,False,False,Argentina,Tempo normal
+103,Disputa de 3º lugar,,,2026-07-18,"Hard Rock Stadium, Miami Gardens",França,Inglaterra,4,6,False,,6,Mata-mata,10,2,False,True,True,False,False,Inglaterra,Tempo normal
+104,Final,,,2026-07-19,"MetLife Stadium, East Rutherford, Nova Jersey (Nova York/Nova Jersey)",Espanha,Argentina,1,0,True,,7,Mata-mata,1,1,False,False,False,True,False,Espanha,Prorrogacao

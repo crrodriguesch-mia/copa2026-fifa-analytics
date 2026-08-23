@@ -1,0 +1,109 @@
+{
+  "torneio": "Copa do Mundo FIFA 2026 (Canadá/México/EUA)",
+  "campeao": "Espanha (2º título)",
+  "vice": "Argentina",
+  "terceiro": "Inglaterra",
+  "quarto": "França",
+  "observacao_datas": "Datas em horário LOCAL da sede (EUA/México/Canadá). Fontes europeias (worldfootball.net) exibem +1 dia em jogos com início noturno nos EUA.",
+  "fases": [
+    {
+      "fase": "16 avos",
+      "partidas": [
+        {"casa": "África do Sul", "fora": "Canadá", "gols_casa": 0, "gols_fora": 1, "penaltis": null, "prorrogacao": false, "data": "2026-06-28", "estadio": "SoFi Stadium, Inglewood (Los Angeles)"},
+        {"casa": "Brasil", "fora": "Japão", "gols_casa": 2, "gols_fora": 1, "penaltis": null, "prorrogacao": false, "data": "2026-06-29", "estadio": "NRG Stadium, Houston"},
+        {"casa": "Alemanha", "fora": "Paraguai", "gols_casa": 1, "gols_fora": 1, "penaltis": "3-4", "prorrogacao": true, "data": "2026-06-29", "estadio": "Gillette Stadium, Foxborough (Boston)"},
+        {"casa": "Países Baixos", "fora": "Marrocos", "gols_casa": 1, "gols_fora": 1, "penaltis": "2-3", "prorrogacao": true, "data": "2026-06-29", "estadio": "Estadio BBVA, Monterrey"},
+        {"casa": "Costa do Marfim", "fora": "Noruega", "gols_casa": 1, "gols_fora": 2, "penaltis": null, "prorrogacao": false, "data": "2026-06-30", "estadio": "AT&T Stadium, Arlington (Dallas)"},
+        {"casa": "França", "fora": "Suécia", "gols_casa": 3, "gols_fora": 0, "penaltis": null, "prorrogacao": false, "data": "2026-06-30", "estadio": "MetLife Stadium, East Rutherford (Nova York/Nova Jersey)"},
+        {"casa": "México", "fora": "Equador", "gols_casa": 2, "gols_fora": 0, "penaltis": null, "prorrogacao": false, "data": "2026-06-30", "estadio": "Estadio Azteca, Cidade do México"},
+        {"casa": "Inglaterra", "fora": "RD Congo", "gols_casa": 2, "gols_fora": 1, "penaltis": null, "prorrogacao": false, "data": "2026-07-01", "estadio": "Mercedes-Benz Stadium, Atlanta"},
+        {"casa": "Bélgica", "fora": "Senegal", "gols_casa": 3, "gols_fora": 2, "penaltis": null, "prorrogacao": true, "data": "2026-07-01", "estadio": "Lumen Field, Seattle"},
+        {"casa": "Estados Unidos", "fora": "Bósnia e Herzegovina", "gols_casa": 2, "gols_fora": 0, "penaltis": null, "prorrogacao": false, "data": "2026-07-01", "estadio": "Levi's Stadium, Santa Clara (São Francisco)"},
+        {"casa": "Espanha", "fora": "Áustria", "gols_casa": 3, "gols_fora": 0, "penaltis": null, "prorrogacao": false, "data": "2026-07-02", "estadio": "SoFi Stadium, Inglewood (Los Angeles)"},
+        {"casa": "Portugal", "fora": "Croácia", "gols_casa": 2, "gols_fora": 1, "penaltis": null, "prorrogacao": false, "data": "2026-07-02", "estadio": "BMO Field, Toronto"},
+        {"casa": "Suíça", "fora": "Argélia", "gols_casa": 2, "gols_fora": 0, "penaltis": null, "prorrogacao": false, "data": "2026-07-02", "estadio": "BC Place, Vancouver"},
+        {"casa": "Austrália", "fora": "Egito", "gols_casa": 1, "gols_fora": 1, "penaltis": "2-4", "prorrogacao": true, "data": "2026-07-03", "estadio": "AT&T Stadium, Arlington (Dallas)"},
+        {"casa": "Argentina", "fora": "Cabo Verde", "gols_casa": 3, "gols_fora": 2, "penaltis": null, "prorrogacao": true, "data": "2026-07-03", "estadio": "Hard Rock Stadium, Miami Gardens"},
+        {"casa": "Colômbia", "fora": "Gana", "gols_casa": 1, "gols_fora": 0, "penaltis": null, "prorrogacao": false, "data": "2026-07-03", "estadio": "Arrowhead Stadium, Kansas City"}
+      ]
+    },
+    {
+      "fase": "Oitavas",
+      "partidas": [
+        {"casa": "Canadá", "fora": "Marrocos", "gols_casa": 0, "gols_fora": 3, "penaltis": null, "prorrogacao": false, "data": "2026-07-04", "estadio": "NRG Stadium, Houston"},
+        {"casa": "Paraguai", "fora": "França", "gols_casa": 0, "gols_fora": 1, "penaltis": null, "prorrogacao": false, "data": "2026-07-04", "estadio": "Lincoln Financial Field, Filadélfia"},
+        {"casa": "Brasil", "fora": "Noruega", "gols_casa": 1, "gols_fora": 2, "penaltis": null, "prorrogacao": false, "data": "2026-07-05", "estadio": "MetLife Stadium, East Rutherford (Nova York/Nova Jersey)"},
+        {"casa": "México", "fora": "Inglaterra", "gols_casa": 2, "gols_fora": 3, "penaltis": null, "prorrogacao": false, "data": "2026-07-05", "estadio": "Estadio Azteca, Cidade do México"},
+        {"casa": "Portugal", "fora": "Espanha", "gols_casa": 0, "gols_fora": 1, "penaltis": null, "prorrogacao": false, "data": "2026-07-06", "estadio": "AT&T Stadium, Arlington (Dallas)"},
+        {"casa": "Estados Unidos", "fora": "Bélgica", "gols_casa": 1, "gols_fora": 4, "penaltis": null, "prorrogacao": false, "data": "2026-07-06", "estadio": "Lumen Field, Seattle"},
+        {"casa": "Argentina", "fora": "Egito", "gols_casa": 3, "gols_fora": 2, "penaltis": null, "prorrogacao": false, "data": "2026-07-07", "estadio": "Mercedes-Benz Stadium, Atlanta"},
+        {"casa": "Suíça", "fora": "Colômbia", "gols_casa": 0, "gols_fora": 0, "penaltis": "4-3", "prorrogacao": true, "data": "2026-07-07", "estadio": "BC Place, Vancouver"}
+      ]
+    },
+    {
+      "fase": "Quartas",
+      "partidas": [
+        {"casa": "França", "fora": "Marrocos", "gols_casa": 2, "gols_fora": 0, "penaltis": null, "prorrogacao": false, "data": "2026-07-09", "estadio": "Gillette Stadium, Foxborough (Boston)"},
+        {"casa": "Espanha", "fora": "Bélgica", "gols_casa": 2, "gols_fora": 1, "penaltis": null, "prorrogacao": false, "data": "2026-07-10", "estadio": "SoFi Stadium, Inglewood (Los Angeles)"},
+        {"casa": "Noruega", "fora": "Inglaterra", "gols_casa": 1, "gols_fora": 2, "penaltis": null, "prorrogacao": true, "data": "2026-07-11", "estadio": "Hard Rock Stadium, Miami Gardens"},
+        {"casa": "Argentina", "fora": "Suíça", "gols_casa": 3, "gols_fora": 1, "penaltis": null, "prorrogacao": true, "data": "2026-07-11", "estadio": "Arrowhead Stadium, Kansas City"}
+      ]
+    },
+    {
+      "fase": "Semifinais",
+      "partidas": [
+        {"casa": "França", "fora": "Espanha", "gols_casa": 0, "gols_fora": 2, "penaltis": null, "prorrogacao": false, "data": "2026-07-14", "estadio": "AT&T Stadium, Arlington (Dallas)", "gols": "Mikel Oyarzabal (pênalti, 1º tempo), Pedro Porro (2º tempo)"},
+        {"casa": "Inglaterra", "fora": "Argentina", "gols_casa": 1, "gols_fora": 2, "penaltis": null, "prorrogacao": false, "data": "2026-07-15", "estadio": "Mercedes-Benz Stadium, Atlanta", "gols": "Anthony Gordon 55' (ING); Enzo Fernández 85' e Lautaro Martínez (acréscimos, de cabeça, assistências de Messi) (ARG)"}
+      ]
+    },
+    {
+      "fase": "Disputa de 3º lugar",
+      "partidas": [
+        {"casa": "França", "fora": "Inglaterra", "gols_casa": 4, "gols_fora": 6, "penaltis": null, "prorrogacao": false, "data": "2026-07-18", "estadio": "Hard Rock Stadium, Miami Gardens", "nota": "Jogo de maior número de gols na história da disputa de 3º lugar; Mbappé fez história (marca não detalhada nas fontes consultadas)"}
+      ]
+    },
+    {
+      "fase": "Final",
+      "partidas": [
+        {"casa": "Espanha", "fora": "Argentina", "gols_casa": 1, "gols_fora": 0, "penaltis": null, "prorrogacao": true, "data": "2026-07-19", "estadio": "MetLife Stadium, East Rutherford, Nova Jersey (Nova York/Nova Jersey)", "gols": "Ferran Torres 106' (2º tempo da prorrogação; entrou aos 62')", "detalhes": "Enzo Fernández (ARG) recebeu cartão vermelho nos acréscimos do 2º tempo por falta em Pau Cubarsí, deixando a Argentina com 10 na prorrogação. Emiliano Martínez fez 12 defesas (recorde do torneio). Finalizações: Espanha 20 x 3 Argentina."}
+      ]
+    }
+  ],
+  "fontes": [
+    "https://www.fifa.com/en/match-centre/match/17/285023/289292/400021543 (Final: Spain v Argentina 1-0)",
+    "https://www.fifa.com/en/match-centre/match/17/285023/289291/400021542 (3º lugar: France v England 4-6)",
+    "https://www.fifa.com/en/match-centre/match/17/285023/289290/400021541 (Semi: France v Spain 0-2)",
+    "https://www.fifa.com/match-centre/match/17/285023/289290/400021540 (Semi: England v Argentina 1-2)",
+    "https://www.fifa.com/en/match-centre/match/17/285023/289287/400021513 (Germany v Paraguay 1-1)",
+    "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/netherlands-morocco-review-highlights (Netherlands 1-1 Morocco, PSO 2-3)",
+    "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/australia-egypt-match-report-highlights (Australia 1-1 Egypt, 2-4 PSO)",
+    "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/switzerland-colombia-match-report-highlights (Switzerland 0-0 Colombia, 4-3 PSO)",
+    "https://www.fifa.com/en/match-centre/match/17/285023/289288/400021530 (Canada v Morocco 0-3)",
+    "https://www.worldfootball.net/competition/co139/fifa-world-cup/ro186353/round-of-32/results-and-standings/",
+    "https://www.worldfootball.net/competition/co139/fifa-world-cup/se64325/2026-canada-mexico-usa/ro186326/round-of-16/matches-and-results/",
+    "https://www.worldfootball.net/competition/co139/fifa-world-cup/se64325/2026-canada-mexico-usa/ro186329/quarter-finals/matches-and-results/",
+    "https://sports.yahoo.com/soccer/article/2026-fifa-world-cup-daily-schedule-every-match-date-kickoff-time-and-venue-for-all-48-teams-234515087.html (datas + estádios de todas as partidas)",
+    "https://sports.yahoo.com/soccer/article/2026-world-cup-results-standings-and-schedule-live-scores-group-stage-updates-and-how-to-watch-050724193.html",
+    "https://www.cbsnews.com/news/2026-fifa-world-cup-final-spain-argentina-sunday/ (detalhes da final)",
+    "https://www.si.com/soccer/2026-world-cup-quarterfinal-semifinal-locations-stadiums-schedule-kickoff-times (sedes de quartas e semis)",
+    "https://www.espn.com/soccer/match/_/gameId/760517/argentina-spain (Spain 1-0 Argentina, 19/07/2026)",
+    "https://www.espn.com/soccer/match/_/gameId/760516/england-france (France 4-6 England, 18/07/2026)",
+    "https://www.espn.com/soccer/match/_/gameId/760489/paraguay-germany",
+    "https://www.espn.com/soccer/match/_/gameId/760488/morocco-netherlands",
+    "https://www.espn.com/soccer/match/_/gameId/760499/egypt-australia",
+    "https://www.espn.com/soccer/match/_/gameId/760508/colombia-switzerland",
+    "https://www.foxsports.com/stories/soccer/paraguay-knocks-germany-out-2026-world-cup-after-penalty-shootout",
+    "https://www.aljazeera.com/sports/2026/6/30/morocco-netherlands-world-cup-knockout-penalty-shootout-saibari-diop-gakpo",
+    "https://theanalyst.com/articles/switzerland-vs-colombia-stats-world-cup-2026",
+    "https://blog.wego.com/fifa-world-cup-bracket/ (chave completa, usada como checagem cruzada)"
+  ],
+  "lacunas": [
+    "Autores dos gols: coletados apenas para a final, as duas semifinais e parcialmente para Bélgica 3-2 Senegal (pênalti de Youri Tielemans aos 125') e EUA 2-0 Bósnia (Folarin Balogun e Malik Tillman). Demais partidas: NÃO ENCONTRADO nesta pesquisa (não fazia parte do pedido central).",
+    "Disputa de 3º lugar: placar 4-6 confirmado por FIFA/ESPN/Al Jazeera, mas os autores dos 10 gols e o detalhe do 'recorde de Mbappé' NÃO ENCONTRADOS nas páginas acessíveis.",
+    "Prorrogação em Argentina 3-2 Egito (oitavas): nenhuma fonte marcou 'a.e.t.'; tratado como tempo normal, mas NÃO CONFIRMADO explicitamente.",
+    "Públicos (attendance) de todas as partidas: NÃO ENCONTRADO / não pesquisado.",
+    "Divergência de datas: worldfootball.net (fuso CET) registra +1 dia para jogos de início noturno nos EUA (ex.: EUA x Bósnia como 02.07, Argentina x Cabo Verde como 04.07, Argentina x Suíça como 12.07). Adotadas as datas locais norte-americanas confirmadas por Yahoo Sports, FOX Sports e ESPN.",
+    "Divergência de mando: worldfootball.net listou a 2ª semifinal como 'Argentina x Inglaterra'; a designação oficial da FIFA é 'England v Argentina 1-2' (adotada aqui). O placar é o mesmo (Argentina venceu 2-1).",
+    "Blog.wego.com trazia datas por partida imprecisas nas oitavas/quartas; usado apenas para checagem de placares, não de datas."
+  ]
+}

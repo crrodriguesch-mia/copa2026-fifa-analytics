@@ -1,0 +1,1302 @@
+<title>Copa 2026 em Dados</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&family=Instrument+Sans:wght@400..600&display=swap">
+<style>
+/* ============================================================
+   TOKENS — paleta neutra com viés verde (referência ao gramado),
+   acento em tom de bronze/troféu. Séries de dados: slots 1–3 da
+   paleta validada (azul, laranja, aqua) + par divergente azul↔vermelho.
+   ============================================================ */
+:root{
+  color-scheme: light;
+  --page:#f4f6f1; --surface:#fbfcf9; --surface-2:#eef1e9;
+  --ink:#101410; --ink-2:#4b524b; --muted:#7c8379;
+  --grid:#e3e7dd; --axis:#c4cabd; --border:rgba(16,20,16,.11);
+  --accent:#7d5f11; --accent-soft:rgba(125,95,17,.10);
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a;
+  --pos:#2a78d6; --neg:#e34948; --mid:#e6e8e1;
+  --ctx:#b9c0b3;
+  --shadow:0 1px 2px rgba(16,20,16,.04), 0 8px 24px -18px rgba(16,20,16,.28);
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){
+  :root:where(:not([data-theme="light"])){
+    color-scheme: dark;
+    --page:#0b0e0b; --surface:#141814; --surface-2:#1c211c;
+    --ink:#f2f5ef; --ink-2:#b5bcb1; --muted:#868d83;
+    --grid:#232823; --axis:#343b34; --border:rgba(242,245,239,.12);
+    --accent:#d9b04a; --accent-soft:rgba(217,176,74,.12);
+    --s1:#3987e5; --s2:#d95926; --s3:#199e70;
+    --pos:#3987e5; --neg:#e66767; --mid:#2a2f2a;
+    --ctx:#4a514a;
+    --shadow:0 1px 2px rgba(0,0,0,.5), 0 10px 28px -20px rgba(0,0,0,.9);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --page:#0b0e0b; --surface:#141814; --surface-2:#1c211c;
+  --ink:#f2f5ef; --ink-2:#b5bcb1; --muted:#868d83;
+  --grid:#232823; --axis:#343b34; --border:rgba(242,245,239,.12);
+  --accent:#d9b04a; --accent-soft:rgba(217,176,74,.12);
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70;
+  --pos:#3987e5; --neg:#e66767; --mid:#2a2f2a;
+  --ctx:#4a514a;
+  --shadow:0 1px 2px rgba(0,0,0,.5), 0 10px 28px -20px rgba(0,0,0,.9);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--page); color:var(--ink);
+  font-family:"Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size:15px; line-height:1.5; -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.disp{font-family:"Archivo","Instrument Sans",system-ui,sans-serif;font-variation-settings:"wdth" 112;}
+.wrap{max-width:1320px;margin:0 auto;padding:0 24px}
+@media (max-width:640px){.wrap{padding:0 14px}}
+
+/* ---------- cabeçalho ---------- */
+header.top{border-bottom:1px solid var(--border);background:var(--surface);}
+.head-grid{display:flex;flex-wrap:wrap;gap:24px;align-items:flex-end;justify-content:space-between;padding:34px 0 26px}
+.eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600}
+h1{margin:.28em 0 .18em;font-size:clamp(30px,4.6vw,50px);line-height:1.02;font-weight:800;letter-spacing:-.02em;text-wrap:balance}
+.sub{color:var(--ink-2);font-size:15px;max-width:56ch}
+.champ{border:1px solid var(--border);border-radius:var(--r);padding:14px 18px;background:var(--surface-2);min-width:250px}
+.champ .lbl{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.champ .val{font-family:"Archivo";font-variation-settings:"wdth" 118;font-weight:800;font-size:26px;letter-spacing:-.01em;margin-top:2px}
+.champ .det{font-size:12.5px;color:var(--ink-2);margin-top:4px;line-height:1.4}
+
+/* ---------- KPIs ---------- */
+.kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--border);border-bottom:1px solid var(--border)}
+@media (max-width:900px){.kpis{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:520px){.kpis{grid-template-columns:repeat(2,1fr)}}
+.kpi{background:var(--surface);padding:16px 18px}
+.kpi .k{font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.kpi .v{font-family:"Archivo";font-variation-settings:"wdth" 115;font-weight:700;font-size:27px;letter-spacing:-.015em;margin-top:3px}
+.kpi .n{font-size:12px;color:var(--ink-2)}
+
+/* ---------- barra de filtros ---------- */
+.filters{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--surface) 92%, transparent);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.filter-row{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;padding:12px 0}
+.fgroup{display:flex;flex-direction:column;gap:3px}
+.fgroup label{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+select,input[type="search"]{
+  font:inherit;font-size:13.5px;padding:6px 10px;border-radius:8px;border:1px solid var(--border);
+  background:var(--surface);color:var(--ink);min-width:140px
+}
+input[type="search"]{min-width:170px}
+select:focus-visible,input:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.btn{font:inherit;font-size:13px;padding:7px 12px;border-radius:8px;border:1px solid var(--border);
+  background:var(--surface);color:var(--ink-2);cursor:pointer}
+.btn:hover{background:var(--surface-2);color:var(--ink)}
+.fnote{font-size:12px;color:var(--muted);margin-left:auto}
+.chip-count{font-variant-numeric:tabular-nums;color:var(--ink);font-weight:600}
+
+/* ---------- seções e cartões ---------- */
+section{padding:36px 0 8px}
+.sec-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:16px}
+.sec-head h2{margin:0;font-size:21px;font-weight:700;letter-spacing:-.01em}
+.sec-head .tag{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);
+  border:1px solid var(--accent);border-radius:99px;padding:2px 9px;font-weight:600}
+.sec-head p{margin:0;color:var(--ink-2);font-size:13.5px;max-width:72ch}
+.grid{display:grid;gap:18px}
+.grid > *{min-width:0}
+.g2{grid-template-columns:1fr 1fr}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g23{grid-template-columns:1.4fr 1fr}
+@media (max-width:960px){.g2,.g3,.g23{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:18px 18px 14px;box-shadow:var(--shadow)}
+.card h3{margin:0 0 2px;font-size:15.5px;font-weight:700;letter-spacing:-.005em}
+.card .cap{font-size:12.5px;color:var(--ink-2);margin:0 0 12px;line-height:1.45}
+.card .foot{font-size:12px;color:var(--muted);margin-top:8px;line-height:1.45}
+.plot{width:100%;overflow-x:auto}
+svg{display:block;width:100%;height:auto;font-family:"Instrument Sans",system-ui,sans-serif}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin:2px 0 10px;font-size:12px;color:var(--ink-2)}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:6px;vertical-align:baseline}
+.tbtn{font:inherit;font-size:11.5px;letter-spacing:.04em;padding:4px 9px;border-radius:99px;border:1px solid var(--border);
+  background:transparent;color:var(--muted);cursor:pointer}
+.tbtn:hover{color:var(--ink);border-color:var(--axis)}
+.tbtn[aria-expanded="true"]{background:var(--accent-soft);color:var(--accent);border-color:var(--accent)}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+
+/* ---------- tabelas ---------- */
+.tw{overflow-x:auto;margin-top:10px}
+table{border-collapse:collapse;width:100%;font-size:12.5px}
+th,td{text-align:right;padding:6px 8px;border-bottom:1px solid var(--grid);white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+th{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;
+  position:sticky;top:0;background:var(--surface)}
+td{font-variant-numeric:tabular-nums;color:var(--ink-2)}
+td:first-child{color:var(--ink);font-weight:500}
+tbody tr:hover td{background:var(--surface-2)}
+.scroll-y{max-height:420px;overflow-y:auto;overflow-x:auto}
+.hidden{display:none}
+.num{font-variant-numeric:tabular-nums}
+.pill{display:inline-block;font-size:10.5px;padding:1px 7px;border-radius:99px;border:1px solid var(--border);color:var(--ink-2)}
+.pill.win{border-color:color-mix(in srgb,var(--s3) 55%,transparent);color:var(--s3)}
+.bar-cell{display:flex;align-items:center;gap:7px;justify-content:flex-end}
+.bar-cell span.b{height:6px;border-radius:3px;background:var(--s1);display:block}
+
+/* ---------- destaques ---------- */
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:14px;margin:4px 0 6px}
+.stat{border-left:2px solid var(--accent);padding:2px 0 2px 12px}
+.stat .v{font-family:"Archivo";font-variation-settings:"wdth" 112;font-size:23px;font-weight:700;letter-spacing:-.01em}
+.stat .k{font-size:11.5px;color:var(--ink-2);line-height:1.35}
+.finding{border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;
+  background:var(--surface-2);padding:12px 14px;font-size:13.5px;line-height:1.5}
+.finding b{font-weight:600}
+.awards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--border);
+  border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.award{background:var(--surface);padding:11px 13px}
+.award .k{font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.award .n{font-weight:600;font-size:14.5px;margin-top:2px}
+.award .d{font-size:12px;color:var(--ink-2)}
+
+/* ---------- chaveamento ---------- */
+.bracket{display:flex;gap:14px;overflow-x:auto;padding-bottom:6px}
+.bcol{min-width:168px;flex:1}
+.bcol h4{margin:0 0 8px;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.match{border:1px solid var(--border);border-radius:8px;padding:7px 9px;margin-bottom:7px;background:var(--surface);font-size:12.5px}
+.match .l{display:flex;justify-content:space-between;gap:8px}
+.match .l.w{font-weight:600;color:var(--ink)}
+.match .l:not(.w){color:var(--muted)}
+.match .x{font-size:10.5px;color:var(--accent);margin-top:2px}
+
+/* ---------- árvore de decisão ---------- */
+.tree{font-size:13px;line-height:1.6;overflow-x:auto}
+.tree .node{border:1px solid var(--border);border-radius:8px;padding:8px 11px;background:var(--surface-2);display:inline-block;margin:3px 0}
+.tree .lvl{padding-left:22px;border-left:1px dashed var(--axis);margin-left:10px}
+.tree .leaf{border-left:3px solid var(--s1)}
+.tree .leaf.no{border-left-color:var(--s2)}
+
+/* ---------- rodapé ---------- */
+footer{border-top:1px solid var(--border);margin-top:44px;padding:26px 0 44px;background:var(--surface)}
+footer h3{margin:0 0 8px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+footer p, footer li{font-size:12.5px;color:var(--ink-2);line-height:1.6}
+footer ul{margin:0;padding-left:18px}
+footer a{color:var(--ink-2);text-decoration:underline;text-decoration-color:var(--axis);word-break:break-all}
+footer a:hover{color:var(--accent)}
+.fgrid{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:26px}
+@media (max-width:860px){.fgrid{grid-template-columns:1fr}}
+details summary{cursor:pointer;font-size:12.5px;color:var(--ink-2)}
+details[open] summary{color:var(--ink);margin-bottom:6px}
+
+/* ---------- tooltip ---------- */
+#tip{position:fixed;z-index:90;pointer-events:none;opacity:0;transition:opacity .09s;
+  background:var(--ink);color:var(--page);font-size:12px;line-height:1.45;padding:7px 9px;border-radius:7px;
+  max-width:250px;box-shadow:0 6px 20px -8px rgba(0,0,0,.5)}
+#tip b{color:var(--page)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div id="tip" role="status" aria-live="polite"></div>
+
+<header class="top">
+  <div class="wrap head-grid">
+    <div>
+      <div class="eyebrow">Estudo de caso · MBA · Visualização de Dados e Dashboards</div>
+      <h1>Copa do Mundo FIFA 2026 em dados</h1>
+      <p class="sub" id="sub"></p>
+    </div>
+    <div class="champ">
+      <div class="lbl">Campeão</div>
+      <div class="val" id="champ-name"></div>
+      <div class="det" id="champ-det"></div>
+    </div>
+  </div>
+</header>
+
+<div class="kpis" id="kpis"></div>
+
+<div class="filters">
+  <div class="wrap filter-row">
+    <div class="fgroup">
+      <label for="f-fase">Fase</label>
+      <select id="f-fase"></select>
+    </div>
+    <div class="fgroup">
+      <label for="f-conf">Confederação</label>
+      <select id="f-conf"></select>
+    </div>
+    <div class="fgroup">
+      <label for="f-perfil">Perfil tático (cluster)</label>
+      <select id="f-perfil"></select>
+    </div>
+    <div class="fgroup">
+      <label for="f-metrica">Indicador do ranking</label>
+      <select id="f-metrica"></select>
+    </div>
+    <div class="fgroup">
+      <label for="f-busca">Seleção</label>
+      <input id="f-busca" type="search" placeholder="ex.: Marrocos" autocomplete="off">
+    </div>
+    <button class="btn" id="f-limpar" type="button">Limpar filtros</button>
+    <div class="fnote">Seleções no filtro: <span class="chip-count" id="cnt-sel"></span> · partidas: <span class="chip-count" id="cnt-par"></span></div>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <!-- ============ A. PANORAMA ============ -->
+  <section id="panorama">
+    <div class="sec-head">
+      <h2>Panorama do torneio</h2><span class="tag">Análise exploratória</span>
+      <p>Primeira Copa com 48 seleções e 104 partidas. O volume de gols cresceu em termos absolutos, mas a média por partida ficou próxima da série histórica recente.</p>
+    </div>
+    <div class="grid g23">
+      <div class="card">
+        <div class="card-top">
+          <div><h3>Média de gols por partida em cada fase</h3>
+          <p class="cap">A fase de grupos e o mata-mata praticamente empatam em média de gols (2,99 x 2,91); a diferença não é estatisticamente significativa.</p></div>
+          <button class="tbtn" data-table="t-fase" aria-expanded="false">Tabela</button>
+        </div>
+        <div class="plot" id="c-fase"></div>
+        <div id="t-fase" class="hidden"></div>
+        <p class="foot" id="foot-fase"></p>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div><h3>Gols por partida: observado x Poisson</h3>
+          <p class="cap">Distribuição das 104 partidas comparada ao modelo de Poisson com λ = 2,96.</p></div>
+          <button class="tbtn" data-table="t-poisson" aria-expanded="false">Tabela</button>
+        </div>
+        <div class="legend" id="l-poisson"></div>
+        <div class="plot" id="c-poisson"></div>
+        <div id="t-poisson" class="hidden"></div>
+        <p class="foot" id="foot-poisson"></p>
+      </div>
+    </div>
+    <div class="grid g3" style="margin-top:18px">
+      <div class="card">
+        <h3>Como as partidas foram decididas</h3>
+        <p class="cap">Distribuição das 104 partidas por forma de decisão.</p>
+        <div class="stat-row" id="s-decisao"></div>
+      </div>
+      <div class="card">
+        <h3>Padrões de resultado</h3>
+        <p class="cap">Indicadores calculados sobre a base de partidas.</p>
+        <div class="stat-row" id="s-padroes"></div>
+      </div>
+      <div class="card">
+        <h3>Público</h3>
+        <p class="cap">Recorde absoluto de público em Copas do Mundo.</p>
+        <div class="stat-row" id="s-publico"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ B. SELEÇÕES ============ -->
+  <section id="selecoes">
+    <div class="sec-head">
+      <h2>Desempenho das seleções</h2><span class="tag">48 seleções</span>
+      <p>Todos os indicadores estão normalizados por partida, para não penalizar seleções eliminadas cedo.</p>
+    </div>
+    <div class="grid g23">
+      <div class="card">
+        <div class="card-top">
+          <div><h3 id="rank-title">Ranking de seleções</h3>
+          <p class="cap" id="rank-cap"></p></div>
+          <button class="tbtn" data-table="t-rank" aria-expanded="false">Tabela</button>
+        </div>
+        <div class="plot" id="c-rank"></div>
+        <div id="t-rank" class="hidden"></div>
+        <p class="foot">A seleção campeã aparece destacada. Use o filtro "Indicador do ranking" para trocar a métrica.</p>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div><h3>Ataque x defesa</h3>
+          <p class="cap">Gols esperados criados (xG por jogo) contra gols sofridos por jogo. As linhas marcam as medianas do torneio.</p></div>
+          <button class="tbtn" data-table="t-quad" aria-expanded="false">Tabela</button>
+        </div>
+        <div class="legend" id="l-quad"></div>
+        <div class="plot" id="c-quad"></div>
+        <div id="t-quad" class="hidden"></div>
+        <p class="foot">Quadrante inferior direito: cria muito e sofre pouco — onde estão os semifinalistas.</p>
+      </div>
+    </div>
+
+    <div class="grid g2" style="margin-top:18px">
+      <div class="card">
+        <div class="card-top">
+          <div><h3>Conversão: gols marcados x gols esperados</h3>
+          <p class="cap">Diferença entre gols marcados e xG. Acima de zero, a seleção converteu mais do que a qualidade das chances previa.</p></div>
+          <button class="tbtn" data-table="t-conv" aria-expanded="false">Tabela</button>
+        </div>
+        <div class="plot" id="c-conv"></div>
+        <div id="t-conv" class="hidden"></div>
+        <p class="foot">Apenas as 10 maiores diferenças em cada direção, entre as seleções filtradas.</p>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div><h3>Artilharia</h3>
+          <p class="cap">Jogadores com pelo menos 3 gols. O eixo mostra gols; o passe do mouse traz minutos por gol.</p></div>
+          <button class="tbtn" data-table="t-art" aria-expanded="false">Tabela</button>
+        </div>
+        <div class="plot" id="c-art"></div>
+        <div id="t-art" class="hidden"></div>
+        <p class="foot" id="foot-art"></p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:18px">
+      <h3>Premiação individual</h3>
+      <p class="cap">Prêmios oficiais do torneio.</p>
+      <div class="awards" id="awards"></div>
+    </div>
+  </section>
+
+  <!-- ============ C. ESTATÍSTICA ============ -->
+  <section id="estatistica">
+    <div class="sec-head">
+      <h2>Estatística aplicada</h2><span class="tag">Inferência</span>
+      <p>Comparação entre grupos por teste não paramétrico, correlação ordinal com a classificação final e análise de associação entre variáveis categóricas.</p>
+    </div>
+    <div class="grid g2">
+      <div class="card">
+        <div class="card-top">
+          <div><h3>O que separa quem avançou de quem caiu nos grupos</h3>
+          <p class="cap">Medianas dos dois grupos (32 x 16 seleções) e resultado do teste de Mann-Whitney.</p></div>
+          <button class="tbtn" data-table="t-mw" aria-expanded="false">Tabela</button>
+        </div>
+        <div class="legend" id="l-mw"></div>
+        <div class="plot" id="c-mw"></div>
+        <div id="t-mw" class="hidden"></div>
+        <p class="foot">Indicadores em escalas diferentes foram convertidos para percentual do valor máximo observado, para caberem num eixo único; os valores absolutos estão na tabela.</p>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div><h3>Correlação com a classificação final</h3>
+          <p class="cap">Coeficiente de Spearman entre cada indicador e a posição final (1º ao 48º). Valores negativos indicam que quanto maior o indicador, melhor a posição.</p></div>
+          <button class="tbtn" data-table="t-corr" aria-expanded="false">Tabela</button>
+        </div>
+        <div class="plot" id="c-corr"></div>
+        <div id="t-corr" class="hidden"></div>
+        <p class="foot">Barras à esquerda (azul) = associação favorável ao desempenho; à direita (vermelho) = desfavorável. Marcadas com • as correlações significativas a 5%.</p>
+      </div>
+    </div>
+    <div class="grid g3" style="margin-top:18px">
+      <div class="card">
+        <h3>Manter a meta invicta x vencer</h3>
+        <p class="cap">208 participações de equipes (104 partidas x 2).</p>
+        <div class="stat-row" id="s-cs"></div>
+        <p class="foot" id="foot-cs"></p>
+      </div>
+      <div class="card">
+        <h3>Faixa de posse x avanço</h3>
+        <p class="cap">Seleções divididas em tercis de posse de bola.</p>
+        <div class="legend" id="l-posse"></div>
+        <div class="plot" id="c-posse"></div>
+        <p class="foot" id="foot-posse"></p>
+      </div>
+      <div class="card">
+        <h3>Aderência ao modelo de Poisson</h3>
+        <p class="cap">Teste de qui-quadrado sobre a distribuição de gols por partida.</p>
+        <div class="stat-row" id="s-poisson"></div>
+        <p class="foot" id="foot-poisson2"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ D. MINERAÇÃO ============ -->
+  <section id="mineracao">
+    <div class="sec-head">
+      <h2>Mineração de dados</h2><span class="tag">K-Means · Apriori · Árvore</span>
+      <p>Agrupamento das 48 seleções por perfil de jogo, regras de associação entre características e avanço na competição, e árvore de decisão como leitura de importância de variáveis.</p>
+    </div>
+    <div class="grid g23">
+      <div class="card">
+        <div class="card-top">
+          <div><h3>Quatro perfis de jogo</h3>
+          <p class="cap">Centroides dos clusters em z-score: quanto cada perfil se afasta da média do torneio em cada indicador.</p></div>
+          <button class="tbtn" data-table="t-heat" aria-expanded="false">Tabela</button>
+        </div>
+        <div class="plot" id="c-heat"></div>
+        <div id="t-heat" class="hidden"></div>
+        <p class="foot">Azul = acima da média do torneio; vermelho = abaixo. Cada célula traz o valor em desvios-padrão.</p>
+      </div>
+      <div class="card">
+        <h3>Composição dos clusters</h3>
+        <p class="cap">Seleções de cada perfil, com a taxa de avanço ao mata-mata.</p>
+        <div id="cluster-list"></div>
+      </div>
+    </div>
+
+    <div class="grid g2" style="margin-top:18px">
+      <div class="card">
+        <div class="card-top">
+          <div><h3>Mapa de perfis (PCA)</h3>
+          <p class="cap">Projeção dos 8 indicadores em 2 componentes principais, um painel por perfil. Em cinza, as demais seleções, para referência.</p></div>
+          <button class="tbtn" data-table="t-pca" aria-expanded="false">Tabela</button>
+        </div>
+        <div class="plot" id="c-pca"></div>
+        <div id="t-pca" class="hidden"></div>
+        <p class="foot" id="foot-pca"></p>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div><h3>Regras de associação</h3>
+          <p class="cap">Regras do tipo SE (características) ENTÃO (desfecho), ordenadas por lift. Suporte mínimo 15%, confiança mínima 70%.</p></div>
+          <button class="tbtn" data-table="t-regras" aria-expanded="false">Tabela</button>
+        </div>
+        <div id="regras"></div>
+        <div id="t-regras" class="hidden"></div>
+        <p class="foot" id="foot-regras"></p>
+      </div>
+    </div>
+
+    <div class="grid g2" style="margin-top:18px">
+      <div class="card">
+        <h3>Árvore de decisão: quem avança ao mata-mata</h3>
+        <p class="cap">Profundidade 2, validação leave-one-out. Serve para ler pontos de corte, não para prever novos torneios.</p>
+        <div class="tree" id="tree"></div>
+        <div class="stat-row" id="s-arvore" style="margin-top:14px"></div>
+      </div>
+      <div class="card">
+        <h3>Escolha do número de clusters</h3>
+        <p class="cap">Inércia (cotovelo) e índice de silhueta para k de 2 a 7.</p>
+        <div class="plot" id="c-k"></div>
+        <p class="foot">A silhueta é máxima em k=2, mas a solução de dois grupos apenas separa "fortes" de "fracos". Adotou-se k=4, que mantém silhueta positiva e produz perfis táticos interpretáveis — a escolha está discutida no relatório.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ E. PARTIDAS ============ -->
+  <section id="partidas">
+    <div class="sec-head">
+      <h2>Partidas e chaveamento</h2><span class="tag">104 partidas</span>
+      <p>Base de fatos completa. A tabela responde aos filtros de fase e de seleção.</p>
+    </div>
+    <div class="card">
+      <h3>Caminho até o título</h3>
+      <p class="cap">Confrontos do mata-mata, da fase de 32 à final. Em destaque, quem avançou.</p>
+      <div class="bracket" id="bracket"></div>
+    </div>
+    <div class="grid g23" style="margin-top:18px">
+      <div class="card">
+        <h3>Todas as partidas</h3>
+        <p class="cap" id="cap-partidas"></p>
+        <div id="t-partidas"></div>
+      </div>
+      <div class="card">
+        <h3>Tabelas dos grupos</h3>
+        <p class="cap">Classificação final dos 12 grupos.</p>
+        <div id="t-grupos" class="scroll-y"></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap fgrid">
+    <div>
+      <h3>Método</h3>
+      <p>Base construída a partir de fontes públicas, com validação cruzada: as 48 linhas das tabelas de grupo foram reconstruídas aritmeticamente a partir dos 72 placares, e a soma dos gols das 104 partidas (308) confere com o total divulgado de forma independente. Preparação e análise em Python (pandas, scipy, scikit-learn, mlxtend).</p>
+      <p id="limitacoes"></p>
+    </div>
+    <div>
+      <h3>Perguntas analíticas</h3>
+      <ul>
+        <li>Quais indicadores estão associados ao avanço na competição?</li>
+        <li>Existe relação entre posse de bola e resultado?</li>
+        <li>É possível agrupar as seleções por perfil de jogo?</li>
+        <li>Quais combinações de características antecedem a eliminação precoce?</li>
+        <li>A distribuição de gols segue um processo aleatório de Poisson?</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Fontes</h3>
+      <details>
+        <summary id="fontes-sum"></summary>
+        <ul id="fontes"></ul>
+      </details>
+    </div>
+  </div>
+</footer>
+
+<script>
+"use strict";
+const D = /*__DADOS__*/;
+
+/* =====================================================================
+   1. UTILITÁRIOS
+   ===================================================================== */
+const $ = (s, r=document) => r.querySelector(s);
+const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
+const NS = "http://www.w3.org/2000/svg";
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const nf = (v, d=1) => (v===null||v===undefined||Number.isNaN(v)) ? "–"
+  : Number(v).toLocaleString("pt-BR", {minimumFractionDigits:d, maximumFractionDigits:d});
+const ni = v => (v===null||v===undefined) ? "–" : Number(v).toLocaleString("pt-BR");
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function svg(w, h){
+  const s = document.createElementNS(NS, "svg");
+  s.setAttribute("viewBox", `0 0 ${w} ${h}`);
+  s.setAttribute("role", "img");
+  return s;
+}
+function mk(tag, attrs={}, txt){
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  if (txt !== undefined) e.textContent = txt;
+  return e;
+}
+/* eixo/grade recessivos: hairline sólido, uma tonalidade acima da superfície */
+function gridLine(g, x1, y1, x2, y2, color){
+  g.appendChild(mk("line", {x1, y1, x2, y2, stroke: color || "var(--grid)", "stroke-width": 1}));
+}
+function label(g, x, y, txt, o={}){
+  g.appendChild(mk("text", {
+    x, y, fill: o.fill || "var(--muted)", "font-size": o.size || 11,
+    "text-anchor": o.anchor || "start", "font-weight": o.weight || 400,
+    "dominant-baseline": o.baseline || "auto",
+    style: o.tabular ? "font-variant-numeric:tabular-nums" : ""
+  }, txt));
+}
+
+/* ---- tooltip único ---- */
+const tip = $("#tip");
+function tipOn(html, ev){
+  tip.innerHTML = html; tip.style.opacity = 1;
+  const pad = 14, r = tip.getBoundingClientRect();
+  let x = ev.clientX + pad, y = ev.clientY - r.height - 8;
+  if (x + r.width > innerWidth - 8) x = ev.clientX - r.width - pad;
+  if (y < 8) y = ev.clientY + pad;
+  tip.style.left = x + "px"; tip.style.top = y + "px";
+}
+function tipOff(){ tip.style.opacity = 0; }
+/* alvo de interação generoso: o retângulo transparente cobre a marca + folga */
+function hover(el, html){
+  el.addEventListener("mousemove", e => tipOn(html, e));
+  el.addEventListener("mouseleave", tipOff);
+  el.addEventListener("focus", e => tipOn(html, {clientX: el.getBoundingClientRect().left + 20,
+                                                clientY: el.getBoundingClientRect().top + 20}));
+  el.addEventListener("blur", tipOff);
+  el.setAttribute("tabindex", "0");
+}
+
+/* ---- tabela genérica (visão alternativa de todo gráfico) ---- */
+function tabela(cols, rows, opts={}){
+  const w = document.createElement("div");
+  w.className = "tw" + (opts.scroll ? " scroll-y" : "");
+  const t = document.createElement("table");
+  t.innerHTML = "<thead><tr>" + cols.map(c => `<th>${esc(c)}</th>`).join("") + "</tr></thead><tbody>"
+    + rows.map(r => "<tr>" + r.map(c => `<td>${c===null||c===undefined ? "–" : c}</td>`).join("") + "</tr>").join("")
+    + "</tbody>";
+  w.appendChild(t);
+  return w;
+}
+function bindTableToggles(){
+  $$(".tbtn").forEach(b => {
+    if (b.dataset.bound) return; b.dataset.bound = 1;
+    b.addEventListener("click", () => {
+      const t = $("#" + b.dataset.table);
+      const open = t.classList.toggle("hidden") === false;
+      b.setAttribute("aria-expanded", open ? "true" : "false");
+      b.textContent = open ? "Ocultar tabela" : "Tabela";
+    });
+  });
+}
+
+/* =====================================================================
+   2. FORMAS GRÁFICAS
+   ===================================================================== */
+
+/* Barras horizontais — magnitude com rótulos longos (uma série). */
+function barrasH(host, rows, o={}){
+  host.innerHTML = "";
+  const W = 720, rowH = o.rowH || 22, padL = o.padL || 118, padR = 58, padT = 8;
+  const H = padT + rows.length * rowH + 26;
+  const s = svg(W, H); s.setAttribute("aria-label", o.aria || "Gráfico de barras");
+  const max = o.max ?? ((Math.max(...rows.map(r => Math.abs(r.value))) * 1.02) || 1);
+  const x = v => padL + (v / max) * (W - padL - padR);
+
+  [0, .25, .5, .75, 1].forEach(f => {
+    const gx = padL + f * (W - padL - padR);
+    gridLine(s, gx, padT, gx, padT + rows.length * rowH);
+    label(s, gx, H - 8, nf(max * f, o.axDec ?? 1), {anchor: "middle", size: 10, tabular: true});
+  });
+
+  rows.forEach((r, i) => {
+    const y = padT + i * rowH, bh = Math.min(11, rowH - 8);
+    const col = r.color || (o.color || "var(--s1)");
+    const g = mk("g");
+    g.appendChild(mk("rect", {x: padL, y: y + (rowH - bh)/2, width: Math.max(2, x(Math.abs(r.value)) - padL),
+      height: bh, rx: 4, fill: col, opacity: r.dim ? .38 : 1}));
+    label(g, padL - 8, y + rowH/2 + 3.5, r.label, {anchor: "end", size: 11.5,
+      fill: r.hl ? "var(--ink)" : "var(--ink-2)", weight: r.hl ? 600 : 400});
+    label(g, x(Math.abs(r.value)) + 7, y + rowH/2 + 3.5, r.vlabel ?? nf(r.value, o.dec ?? 2),
+      {size: 11, fill: "var(--ink-2)", tabular: true});
+    const hit = mk("rect", {x: 0, y, width: W, height: rowH, fill: "transparent"});
+    hover(hit, r.tip || `<b>${esc(r.label)}</b><br>${nf(r.value, o.dec ?? 2)}`);
+    g.appendChild(hit); s.appendChild(g);
+  });
+  host.appendChild(s);
+}
+
+/* Barras verticais agrupadas — 1 ou 2 séries, com folga de 2px de superfície. */
+function barrasV(host, cats, series, o={}){
+  host.innerHTML = "";
+  const W = 720, H = o.h || 250, padL = 44, padR = 12, padT = 16, padB = 40;
+  const s = svg(W, H); s.setAttribute("aria-label", o.aria || "Gráfico de colunas");
+  const max = o.max ?? ((Math.max(...series.flatMap(se => se.values)) * 1.12) || 1);
+  const bw = (W - padL - padR) / cats.length;
+  const y = v => padT + (1 - v / max) * (H - padT - padB);
+
+  for (let i = 0; i <= 4; i++){
+    const gy = padT + i / 4 * (H - padT - padB);
+    gridLine(s, padL, gy, W - padR, gy);
+    label(s, padL - 8, gy + 3.5, nf(max * (1 - i/4), o.axDec ?? 1), {anchor: "end", size: 10, tabular: true});
+  }
+  gridLine(s, padL, H - padB, W - padR, H - padB, "var(--axis)");
+
+  const n = series.length, inner = Math.min(bw * .74, 54), each = (inner - (n-1)*2) / n;
+  cats.forEach((c, i) => {
+    const x0 = padL + i * bw + (bw - inner)/2;
+    series.forEach((se, j) => {
+      const v = se.values[i], x = x0 + j * (each + 2), h = Math.max(1, (H - padB) - y(v));
+      const g = mk("g");
+      g.appendChild(mk("rect", {x, y: y(v), width: each, height: h, rx: 4, fill: se.color}));
+      if (o.showValues) label(g, x + each/2, y(v) - 5, nf(v, o.dec ?? 2),
+        {anchor: "middle", size: 10.5, fill: "var(--ink-2)", tabular: true});
+      const hit = mk("rect", {x: x - 3, y: padT, width: each + 6, height: H - padB - padT, fill: "transparent"});
+      hover(hit, `<b>${esc(o.tipCat ? o.tipCat(c) : c)}</b><br>${esc(se.name)}: ${nf(v, o.dec ?? 2)}`);
+      g.appendChild(hit); s.appendChild(g);
+    });
+    const parts = String(c).split("\n");
+    parts.forEach((p, k) => label(s, padL + i*bw + bw/2, H - padB + 15 + k*12, p,
+      {anchor: "middle", size: 10.5, fill: k ? "var(--muted)" : "var(--ink-2)"}));
+  });
+  if (o.yLabel) label(s, 4, 10, o.yLabel, {size: 10});
+  host.appendChild(s);
+}
+
+/* Barras divergentes — polaridade (sinal importa). Par azul↔vermelho, zero neutro. */
+function barrasDiv(host, rows, o={}){
+  host.innerHTML = "";
+  const W = 720, rowH = 21, padL = 152, padR = 52, padT = 14;
+  const H = padT + rows.length * rowH + 24;
+  const s = svg(W, H); s.setAttribute("aria-label", o.aria || "Gráfico de barras divergentes");
+  const finitos = rows.map(r => Math.abs(Number(r.value))).filter(Number.isFinite);
+  const max = finitos.length ? Math.max(...finitos) * 1.1 || 1 : 1;
+  const mid = padL + (W - padL - padR)/2;
+  const x = v => mid + (v / max) * ((W - padL - padR)/2);
+
+  [-1, -.5, 0, .5, 1].forEach(f => {
+    gridLine(s, x(max*f), padT, x(max*f), padT + rows.length*rowH, f === 0 ? "var(--axis)" : "var(--grid)");
+    label(s, x(max*f), H - 8, nf(max*f, 1), {anchor: "middle", size: 10, tabular: true});
+  });
+  rows.forEach((r, i) => {
+    const y = padT + i*rowH, bh = 10, neg = r.value < 0;
+    const g = mk("g");
+    const bom = o.posGood ? !neg : neg;
+    g.appendChild(mk("rect", {x: Math.min(mid, x(r.value)), y: y + (rowH-bh)/2,
+      width: Math.max(2, Math.abs(x(r.value) - mid)), height: bh, rx: 4,
+      fill: bom ? "var(--pos)" : "var(--neg)"}));
+    label(g, padL - 10, y + rowH/2 + 3.5, r.label, {anchor: "end", size: 11.5, fill: "var(--ink-2)"});
+    label(g, neg ? x(r.value) - 7 : x(r.value) + 7, y + rowH/2 + 3.5,
+      nf(r.value, 2) + (r.sig ? " •" : ""), {size: 10.5, anchor: neg ? "end" : "start",
+      fill: "var(--ink-2)", tabular: true});
+    const hit = mk("rect", {x: 0, y, width: W, height: rowH, fill: "transparent"});
+    hover(hit, r.tip); g.appendChild(hit); s.appendChild(g);
+  });
+  host.appendChild(s);
+}
+
+/* Dispersão — identidade por ≤2 cores; anel de 2px de superfície nas marcas. */
+function dispersao(host, pts, o={}){
+  host.innerHTML = "";
+  const W = 720, H = o.h || 340, padL = 52, padR = 16, padT = 14, padB = 44;
+  const s = svg(W, H); s.setAttribute("aria-label", o.aria || "Gráfico de dispersão");
+  const xs = pts.map(p => p.x), ys = pts.map(p => p.y);
+  const x0 = o.xMin ?? Math.min(...xs), x1 = o.xMax ?? Math.max(...xs);
+  const y0 = o.yMin ?? Math.min(...ys), y1 = o.yMax ?? Math.max(...ys);
+  const px = v => padL + (v - x0) / (x1 - x0 || 1) * (W - padL - padR);
+  const py = v => padT + (1 - (v - y0) / (y1 - y0 || 1)) * (H - padT - padB);
+
+  for (let i = 0; i <= 4; i++){
+    const gy = padT + i/4 * (H - padT - padB);
+    gridLine(s, padL, gy, W - padR, gy);
+    label(s, padL - 8, gy + 3.5, nf(y1 - i/4*(y1-y0), o.dec ?? 1), {anchor: "end", size: 10, tabular: true});
+    const gx = padL + i/4 * (W - padL - padR);
+    gridLine(s, gx, padT, gx, H - padB);
+    label(s, gx, H - padB + 15, nf(x0 + i/4*(x1-x0), o.dec ?? 1), {anchor: "middle", size: 10, tabular: true});
+  }
+  if (o.refX !== undefined){
+    s.appendChild(mk("line", {x1: px(o.refX), y1: padT, x2: px(o.refX), y2: H - padB,
+      stroke: "var(--axis)", "stroke-width": 1}));
+    label(s, px(o.refX) + 4, padT + 10, o.refXLabel || "", {size: 9.5});
+  }
+  if (o.refY !== undefined){
+    s.appendChild(mk("line", {x1: padL, y1: py(o.refY), x2: W - padR, y2: py(o.refY),
+      stroke: "var(--axis)", "stroke-width": 1}));
+    label(s, W - padR - 4, py(o.refY) - 5, o.refYLabel || "", {size: 9.5, anchor: "end"});
+  }
+  label(s, W - padR, H - 8, o.xLabel || "", {anchor: "end", size: 10.5, fill: "var(--ink-2)"});
+  label(s, 4, 10, o.yLabel || "", {size: 10.5, fill: "var(--ink-2)"});
+
+  pts.forEach(p => {
+    const g = mk("g");
+    g.appendChild(mk("circle", {cx: px(p.x), cy: py(p.y), r: p.r || 5.5, fill: p.color,
+      stroke: "var(--surface)", "stroke-width": 2, opacity: p.dim ? .5 : 1}));
+    if (p.show){                                   // rótulo vira para dentro perto da borda
+      const dir = px(p.x) > W - padR - 46 ? -1 : 1;
+      label(g, px(p.x) + dir * 8.5, py(p.y) + 3.5, p.label,
+        {size: 10.5, fill: "var(--ink-2)", weight: 500, anchor: dir < 0 ? "end" : "start"});
+    }
+    const hit = mk("circle", {cx: px(p.x), cy: py(p.y), r: 13, fill: "transparent"});
+    hover(hit, p.tip); g.appendChild(hit); s.appendChild(g);
+  });
+  host.appendChild(s);
+}
+
+/* Dumbbell — duas medianas por indicador (2 séries + legenda). */
+function dumbbell(host, rows, o={}){
+  host.innerHTML = "";
+  const W = 720, rowH = 30, padL = 176, padR = 96, padT = 12;
+  const H = padT + rows.length * rowH + 22;
+  const s = svg(W, H); s.setAttribute("aria-label", "Comparação de medianas entre grupos");
+  const x = v => padL + (v/100) * (W - padL - padR);
+  [0, 25, 50, 75, 100].forEach(f => {
+    gridLine(s, x(f), padT, x(f), padT + rows.length*rowH);
+    label(s, x(f), H - 6, f + "%", {anchor: "middle", size: 10, tabular: true});
+  });
+  rows.forEach((r, i) => {
+    const y = padT + i*rowH + rowH/2, g = mk("g");
+    g.appendChild(mk("line", {x1: x(r.a), y1: y, x2: x(r.b), y2: y, stroke: "var(--axis)", "stroke-width": 2}));
+    g.appendChild(mk("circle", {cx: x(r.b), cy: y, r: 5.5, fill: "var(--s2)",
+      stroke: "var(--surface)", "stroke-width": 2}));
+    g.appendChild(mk("circle", {cx: x(r.a), cy: y, r: 5.5, fill: "var(--s1)",
+      stroke: "var(--surface)", "stroke-width": 2}));
+    label(g, padL - 10, y + 3.5, r.label, {anchor: "end", size: 11.5, fill: "var(--ink-2)"});
+    label(g, W - padR + 8, y + 3.5, r.right, {size: 10.5, fill: r.sig ? "var(--ink)" : "var(--muted)",
+      weight: r.sig ? 600 : 400, tabular: true});
+    const hit = mk("rect", {x: 0, y: y - rowH/2, width: W, height: rowH, fill: "transparent"});
+    hover(hit, r.tip); g.appendChild(hit); s.appendChild(g);
+  });
+  host.appendChild(s);
+}
+
+/* Mapa de calor divergente — z-scores dos centroides. */
+function heatmap(host, rowsLab, colsLab, values, o={}){
+  host.innerHTML = "";
+  const cw = 74, ch = 40, padL = 168, padT = 62;
+  const W = padL + colsLab.length * cw + 10, H = padT + rowsLab.length * ch + 12;
+  const s = svg(W, H); s.setAttribute("aria-label", "Mapa de calor dos perfis");
+  const max = Math.max(...values.flat().map(Math.abs)) || 1;
+  const cor = v => {
+    const t = Math.min(1, Math.abs(v)/max);
+    return `color-mix(in srgb, ${v >= 0 ? "var(--pos)" : "var(--neg)"} ${Math.round(t*82)}%, var(--mid))`;
+  };
+  colsLab.forEach((c, j) => {
+    const g = mk("g", {transform: `translate(${padL + j*cw + cw/2}, ${padT - 10}) rotate(-38)`});
+    g.appendChild(mk("text", {x: 0, y: 0, fill: "var(--muted)", "font-size": 10.5}, c));
+    s.appendChild(g);
+  });
+  rowsLab.forEach((r, i) => {
+    label(s, padL - 10, padT + i*ch + ch/2 + 4, r, {anchor: "end", size: 11.5, fill: "var(--ink)", weight: 600});
+    colsLab.forEach((c, j) => {
+      const v = values[i][j], g = mk("g");
+      g.appendChild(mk("rect", {x: padL + j*cw + 1, y: padT + i*ch + 1, width: cw - 2, height: ch - 2,
+        rx: 5, fill: cor(v)}));
+      g.appendChild(mk("text", {x: padL + j*cw + cw/2, y: padT + i*ch + ch/2 + 4,
+        "text-anchor": "middle", "font-size": 11, fill: "var(--ink)",
+        style: "font-variant-numeric:tabular-nums"}, nf(v, 1)));
+      hover(g, `<b>${esc(r)}</b><br>${esc(c)}: ${nf(v, 2)} desvios-padrão`);
+      s.appendChild(g);
+    });
+  });
+  host.appendChild(s);
+}
+
+/* Painéis pequenos (small multiples) da projeção PCA — evita 4 cores num scatter. */
+function pcaFacets(host, sel){
+  host.innerHTML = "";
+  const perfis = D.mineracao.kmeans.perfis.map(p => p.rotulo);
+  const W = 720, colN = 2, pw = W/colN, ph = 172, H = ph * Math.ceil(perfis.length/colN);
+  const s = svg(W, H); s.setAttribute("aria-label", "Projeção PCA por perfil");
+  const xs = D.selecoes.map(d => d.pca_x), ys = D.selecoes.map(d => d.pca_y);
+  const x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = Math.min(...ys), y1 = Math.max(...ys);
+  const vis = new Set(sel.map(d => d.selecao));
+
+  perfis.forEach((p, k) => {
+    const ox = (k % colN) * pw, oy = Math.floor(k / colN) * ph;
+    const padL = 34, padR = 16, padT = 26, padB = 24;
+    const px = v => ox + padL + (v - x0)/(x1 - x0) * (pw - padL - padR);
+    const py = v => oy + padT + (1 - (v - y0)/(y1 - y0)) * (ph - padT - padB);
+    s.appendChild(mk("rect", {x: ox + 4, y: oy + 4, width: pw - 8, height: ph - 8, rx: 8,
+      fill: "none", stroke: "var(--grid)"}));
+    label(s, ox + 14, oy + 20, p, {size: 11.5, fill: "var(--ink)", weight: 600});
+    D.selecoes.forEach(d => {
+      const on = d.perfil_cluster === p, inFilter = vis.has(d.selecao);
+      const g = mk("g");
+      g.appendChild(mk("circle", {cx: px(d.pca_x), cy: py(d.pca_y), r: on ? 5 : 3,
+        fill: on ? "var(--s1)" : "var(--ctx)", opacity: on ? (inFilter ? 1 : .35) : .55,
+        stroke: "var(--surface)", "stroke-width": on ? 2 : 1}));
+      if (on){
+        const hit = mk("circle", {cx: px(d.pca_x), cy: py(d.pca_y), r: 12, fill: "transparent"});
+        hover(hit, `<b>${esc(d.selecao)}</b><br>${esc(p)}<br>Classificação final: ${d.classificacao_final}º`);
+        g.appendChild(hit);
+      }
+      s.appendChild(g);
+    });
+  });
+  host.appendChild(s);
+}
+
+/* =====================================================================
+   3. ESTADO E FILTROS
+   ===================================================================== */
+const METRICAS = [
+  {k: "aproveitamento_pct", n: "Aproveitamento de pontos (%)", d: 1, desc: "percentual dos pontos disputados"},
+  {k: "gols_por_jogo", n: "Gols por jogo", d: 2, desc: "gols marcados por partida"},
+  {k: "gols_sofridos_por_jogo", n: "Gols sofridos por jogo", d: 2, desc: "gols sofridos por partida", asc: true},
+  {k: "xg_por_jogo", n: "Gols esperados (xG) por jogo", d: 2, desc: "qualidade das chances criadas por partida"},
+  {k: "posse_media", n: "Posse de bola média (%)", d: 1, desc: "posse de bola média"},
+  {k: "precisao_passes", n: "Precisão de passes (%)", d: 1, desc: "percentual de passes certos"},
+  {k: "passes_por_jogo", n: "Passes por jogo", d: 0, desc: "volume de passes por partida"},
+  {k: "chutes_a_gol_por_jogo", n: "Chutes a gol por jogo", d: 2, desc: "finalizações no alvo por partida"},
+  {k: "precisao_finalizacao", n: "Precisão de finalização (%)", d: 1, desc: "chutes no alvo sobre o total de chutes"},
+  {k: "pct_clean_sheets", n: "Jogos sem sofrer gol (%)", d: 1, desc: "percentual de partidas sem sofrer gol"},
+  {k: "cartoes_por_jogo", n: "Cartões por jogo", d: 2, desc: "cartões recebidos por partida", asc: true},
+];
+const FASES = ["Todas as fases", "Fase de grupos", "16 avos de final", "Oitavas de final",
+               "Quartas de final", "Semifinal", "Disputa de 3º lugar", "Final"];
+const estado = {fase: "Todas as fases", conf: "Todas", perfil: "Todos", metrica: METRICAS[0].k, busca: ""};
+
+function selecoesFiltradas(){
+  const q = estado.busca.trim().toLowerCase();
+  return D.selecoes.filter(d =>
+    (estado.conf === "Todas" || d.confederacao === estado.conf) &&
+    (estado.perfil === "Todos" || d.perfil_cluster === estado.perfil) &&
+    (!q || d.selecao.toLowerCase().includes(q) || String(d.cod).toLowerCase().includes(q)));
+}
+function partidasFiltradas(){
+  const q = estado.busca.trim().toLowerCase();
+  const nomes = new Set(selecoesFiltradas().map(d => d.selecao));
+  return D.partidas.filter(p =>
+    (estado.fase === "Todas as fases" || p.fase === estado.fase) &&
+    (estado.conf === "Todas" || estado.perfil !== "Todos" || q
+      ? (nomes.has(p.selecao_casa) || nomes.has(p.selecao_fora)) : true));
+}
+
+/* =====================================================================
+   4. PAINÉIS ESTÁTICOS (não dependem de filtro)
+   ===================================================================== */
+function cabecalho(){
+  const m = D.meta;
+  $("#sub").textContent = m.subtitulo + ". Base de 104 partidas e 48 seleções, com estatística aplicada, "
+    + "mineração de dados e dashboard construídos como estudo de caso integrado.";
+  $("#champ-name").textContent = m.campeao;
+  $("#champ-det").textContent = m.final + ". Vice: " + m.vice + " · 3º: " + m.terceiro + " · 4º: " + m.quarto + ".";
+  const kp = [
+    ["Partidas", ni(m.partidas), "104 pela 1ª vez"],
+    ["Gols", ni(m.gols), nf(m.media_gols, 2) + " por partida"],
+    ["Seleções", ni(m.selecoes), "12 grupos de 4"],
+    ["Público", (m.publico_total/1e6).toLocaleString("pt-BR", {maximumFractionDigits:2}) + " mi", "recorde histórico"],
+    ["Média por jogo", ni(m.publico_medio), "espectadores"],
+    ["Cartões", ni(m.cartoes_amarelos + m.cartoes_vermelhos), m.cartoes_vermelhos + " vermelhos"],
+  ];
+  $("#kpis").innerHTML = kp.map(([k, v, n]) =>
+    `<div class="kpi"><div class="k">${k}</div><div class="v">${v}</div><div class="n">${esc(n)}</div></div>`).join("");
+
+  const p = m.premios;
+  $("#awards").innerHTML = [
+    ["Bola de Ouro", p.bola_de_ouro.jogador, p.bola_de_ouro.selecao],
+    ["Chuteira de Ouro", p.chuteira_de_ouro.jogador, p.chuteira_de_ouro.gols + " gols · " + p.chuteira_de_ouro.selecao],
+    ["Luva de Ouro", p.luva_de_ouro.jogador, "7 jogos sem sofrer gol · " + p.luva_de_ouro.selecao],
+    ["Melhor jovem", p.melhor_jogador_jovem.jogador, p.melhor_jogador_jovem.idade + " anos · " + p.melhor_jogador_jovem.selecao],
+    ["Bola de Prata", p.bola_de_prata.jogador, p.bola_de_prata.selecao],
+    ["Fair Play", p.fair_play.selecao, "confiança média na fonte"],
+  ].map(([k, n, d]) => `<div class="award"><div class="k">${esc(k)}</div><div class="n">${esc(n)}</div><div class="d">${esc(d)}</div></div>`).join("");
+
+  $("#fontes-sum").textContent = D.fontes.length + " fontes públicas consultadas (clique para ver)";
+  $("#fontes").innerHTML = D.fontes.map(u => `<li><a href="${esc(u)}" target="_blank" rel="noopener">${esc(u)}</a></li>`).join("");
+  $("#limitacoes").textContent = "Limitações: faltas cometidas não são publicadas por nenhuma fonte acessível; "
+    + "assistências individuais existem apenas para os sete primeiros artilheiros; o mando de campo divergia entre "
+    + "fontes em cerca de dez partidas da fase de grupos e não é usado como variável explicativa; xG vem de um único "
+    + "provedor (modelo proprietário).";
+}
+
+function panorama(){
+  const e = D.estatistica;
+  /* gols por fase */
+  const fases = e.gols_por_fase.filter(f => f.n > 1);   // fases de jogo unico viram nota de rodape
+  const unicas = e.gols_por_fase.filter(f => f.n === 1);
+  barrasV($("#c-fase"), fases.map(f => f.fase.replace(" de final", "")
+      + "\n" + f.n + " jogos"),
+    [{name: "Média de gols", color: "var(--s1)", values: fases.map(f => f.media)}],
+    {showValues: true, dec: 2, h: 260, axDec: 1, aria: "Média de gols por partida em cada fase"});
+  $("#t-fase").appendChild(tabela(["Fase", "Partidas", "Média de gols"],
+    e.gols_por_fase.map(f => [esc(f.fase), f.n, nf(f.media, 2)])));
+  $("#foot-fase").textContent = "As duas fases de jogo único ficam fora do gráfico para não distorcer a escala: "
+    + unicas.map(f => `${f.fase} — ${nf(f.media, 0)} ${f.media === 1 ? "gol" : "gols"}`).join("; ")
+    + " (a disputa de 3º lugar, França 4 x 6 Inglaterra, foi a partida com mais gols do torneio).";
+
+  /* Poisson */
+  const po = e.poisson;
+  barrasV($("#c-poisson"), po.categorias.map(c => c + "\ngols"), [
+    {name: "Observado", color: "var(--s1)", values: po.observado},
+    {name: "Esperado (Poisson)", color: "var(--s2)", values: po.esperado},
+  ], {dec: 1, h: 250, axDec: 0, aria: "Distribuição observada e esperada de gols por partida"});
+  $("#l-poisson").innerHTML = `<span><i style="background:var(--s1)"></i>Partidas observadas</span>
+    <span><i style="background:var(--s2)"></i>Esperado por Poisson (λ=${nf(po.lambda_, 2)})</span>`;
+  $("#t-poisson").appendChild(tabela(["Gols na partida", "Observado", "Esperado"],
+    po.categorias.map((c, i) => [c, po.observado[i], nf(po.esperado[i], 1)])));
+  $("#foot-poisson").textContent = `χ² = ${nf(po.chi2, 2)} com ${po.gl} graus de liberdade, p = ${nf(po.p_valor, 3)}: `
+    + "não se rejeita a hipótese de que os gols seguem um processo de Poisson.";
+  $("#foot-poisson2").textContent = po.conclusao + ".";
+  $("#s-poisson").innerHTML = [
+    ["λ estimado", nf(po.lambda_, 2)], ["χ²", nf(po.chi2, 2)], ["p-valor", nf(po.p_valor, 3)],
+  ].map(([k, v]) => `<div class="stat"><div class="v">${v}</div><div class="k">${esc(k)}</div></div>`).join("");
+
+  /* decisão das partidas */
+  const dec = {};
+  D.partidas.forEach(p => dec[p.decidida_por] = (dec[p.decidida_por] || 0) + 1);
+  const pen = D.partidas.filter(p => p.decidida_por === "Penaltis").length;
+  $("#s-decisao").innerHTML = [
+    ["Tempo normal", dec["Tempo normal"] || 0, "partidas"],
+    ["Prorrogação", dec["Prorrogacao"] || 0, "sem pênaltis"],
+    ["Pênaltis", pen, "disputas"],
+  ].map(([k, v, n]) => `<div class="stat"><div class="v">${v}</div><div class="k">${esc(k)}<br>${esc(n)}</div></div>`).join("");
+
+  const amb = D.partidas.filter(p => p.gols_casa > 0 && p.gols_fora > 0).length;
+  const um = D.partidas.filter(p => Math.abs(p.gols_casa - p.gols_fora) === 1).length;
+  const zero = D.partidas.filter(p => p.total_gols === 0).length;
+  $("#s-padroes").innerHTML = [
+    ["Ambas marcaram", nf(100*amb/104, 1) + "%"],
+    ["Decisão por 1 gol", nf(100*um/104, 1) + "%"],
+    ["Sem gols", zero + " jogos"],
+  ].map(([k, v]) => `<div class="stat"><div class="v">${v}</div><div class="k">${esc(k)}</div></div>`).join("");
+
+  $("#s-publico").innerHTML = [
+    ["Total", (D.meta.publico_total/1e6).toLocaleString("pt-BR", {maximumFractionDigits:2}) + " mi"],
+    ["Média por jogo", ni(D.meta.publico_medio)],
+    ["Ocupação", "99,7%"],
+  ].map(([k, v]) => `<div class="stat"><div class="v">${v}</div><div class="k">${esc(k)}</div></div>`).join("");
+}
+
+function estatisticaPaineis(){
+  const e = D.estatistica;
+  /* dumbbell: medianas normalizadas para o eixo único */
+  const NOMES = {posse_media: "Posse de bola (%)", precisao_passes: "Precisão de passes (%)",
+    chutes_a_gol_por_jogo: "Chutes a gol por jogo", xg_por_jogo: "xG por jogo",
+    gols_por_jogo: "Gols por jogo", gols_sofridos_por_jogo: "Gols sofridos por jogo",
+    precisao_finalizacao: "Precisão de finalização (%)", passes_por_jogo: "Passes por jogo",
+    cartoes_por_jogo: "Cartões por jogo"};
+  const rows = e.comparacao_grupos.map(r => {
+    const m = Math.max(r.mediana_avancou, r.mediana_eliminado) || 1;
+    return {label: NOMES[r.indicador] || r.indicador,
+      a: 100*r.mediana_avancou/m, b: 100*r.mediana_eliminado/m, sig: r.significativo_5pct,
+      right: (r.p_valor < 0.001 ? "p<0,001" : "p=" + nf(r.p_valor, 3)) + " · r=" + nf(r.efeito_r, 2),
+      tip: `<b>${esc(NOMES[r.indicador] || r.indicador)}</b><br>Avançaram (mediana): ${nf(r.mediana_avancou, 2)}`
+        + `<br>Eliminados (mediana): ${nf(r.mediana_eliminado, 2)}<br>U = ${nf(r.U, 0)} · p = ${nf(r.p_valor, 4)}`
+        + `<br>Tamanho de efeito r = ${nf(r.efeito_r, 2)}`};
+  });
+  dumbbell($("#c-mw"), rows);
+  $("#l-mw").innerHTML = `<span><i style="background:var(--s1)"></i>Avançaram ao mata-mata (32)</span>
+    <span><i style="background:var(--s2)"></i>Eliminados na fase de grupos (16)</span>
+    <span style="color:var(--muted)">Em negrito: diferença significativa a 5%</span>`;
+  $("#t-mw").appendChild(tabela(["Indicador", "Mediana — avançaram", "Mediana — eliminados", "U", "p-valor", "Efeito r"],
+    e.comparacao_grupos.map(r => [esc(NOMES[r.indicador] || r.indicador), nf(r.mediana_avancou, 2),
+      nf(r.mediana_eliminado, 2), nf(r.U, 0), nf(r.p_valor, 4), nf(r.efeito_r, 2)])));
+
+  /* correlação de Spearman */
+  const NOMES2 = Object.assign({}, NOMES, {aproveitamento_pct: "Aproveitamento (%)",
+    pct_clean_sheets: "Jogos sem sofrer gol (%)", gols_menos_xg: "Gols acima do xG",
+    saldo_gols: "Saldo de gols"});
+  const cr = e.correlacao_classificacao.filter(r => r.indicador !== "aproveitamento_pct");
+  barrasDiv($("#c-corr"), cr.map(r => ({label: NOMES2[r.indicador] || r.indicador,
+    value: r.rho_spearman, sig: r.significativo_5pct,
+    tip: `<b>${esc(NOMES2[r.indicador] || r.indicador)}</b><br>ρ de Spearman = ${nf(r.rho_spearman, 3)}`
+      + `<br>p = ${r.p_valor < 0.00001 ? "<0,00001" : nf(r.p_valor, 5)}`
+      + `<br>${r.significativo_5pct ? "Significativa a 5%" : "Não significativa"}`})));
+  $("#t-corr").appendChild(tabela(["Indicador", "ρ de Spearman", "p-valor", "Significativa a 5%"],
+    e.correlacao_classificacao.map(r => [esc(NOMES2[r.indicador] || r.indicador), nf(r.rho_spearman, 3),
+      r.p_valor < 0.00001 ? "<0,00001" : nf(r.p_valor, 5), r.significativo_5pct ? "sim" : "não"])));
+
+  /* clean sheet */
+  const cs = e.associacao.clean_sheet_x_vitoria;
+  $("#s-cs").innerHTML = [
+    [nf(100*cs.prob_vitoria_com_clean_sheet, 1) + "%", "vitórias quando não sofreu gol"],
+    [nf(100*cs.prob_vitoria_sem_clean_sheet, 1) + "%", "vitórias quando sofreu gol"],
+    [nf(cs.risco_relativo, 2) + "×", "mais provável vencer"],
+  ].map(([v, k]) => `<div class="stat"><div class="v">${v}</div><div class="k">${esc(k)}</div></div>`).join("");
+  $("#foot-cs").textContent = `χ² = ${nf(cs.chi2, 1)}, p < 0,001, V de Cramér = ${nf(cs.v_cramer, 2)} `
+    + "— associação moderada e altamente significativa.";
+
+  /* posse x avanço */
+  const pa = e.associacao.posse_x_avanco, t = pa.tabela;
+  const faixas = ["Baixa", "Media", "Alta"];
+  barrasV($("#c-posse"), faixas.map(f => (f === "Media" ? "Média" : f) + "\nposse"), [
+    {name: "Avançou", color: "var(--s1)", values: faixas.map(f => t["1"][f])},
+    {name: "Eliminado", color: "var(--s2)", values: faixas.map(f => t["0"][f])},
+  ], {dec: 0, h: 200, axDec: 0, aria: "Faixa de posse de bola por desfecho"});
+  $("#l-posse").innerHTML = `<span><i style="background:var(--s1)"></i>Avançou</span>
+    <span><i style="background:var(--s2)"></i>Eliminado nos grupos</span>`;
+  $("#foot-posse").textContent = `χ² = ${nf(pa.chi2, 1)}, p = ${nf(pa.p_valor, 3)}, V de Cramér = ${nf(pa.v_cramer, 2)} `
+    + "— associação moderada entre posse de bola e avanço à fase eliminatória.";
+}
+
+function mineracaoPaineis(){
+  const m = D.mineracao;
+  /* mapa de calor dos centroides em z-score */
+  const IND = [["posse", "Posse"], ["precisao_passes", "Precisão passes"], ["passes_jogo", "Passes/jogo"],
+    ["chutes_jogo", "Chutes/jogo"], ["chutes_gol_jogo", "Chutes a gol"], ["xg_jogo", "xG/jogo"],
+    ["gols_jogo", "Gols/jogo"], ["gols_sofridos_jogo", "Gols sofridos"]];
+  const perfis = m.kmeans.perfis.slice().sort((a, b) => a.classificacao_media - b.classificacao_media);
+  const media = {}, dp = {};
+  IND.forEach(([k]) => {
+    const vals = D.selecoes.map(d => d[{posse: "posse_media", precisao_passes: "precisao_passes",
+      passes_jogo: "passes_por_jogo", chutes_jogo: "chutes_por_jogo",
+      chutes_gol_jogo: "chutes_a_gol_por_jogo", xg_jogo: "xg_por_jogo",
+      gols_jogo: "gols_por_jogo", gols_sofridos_jogo: "gols_sofridos_por_jogo"}[k]]);
+    media[k] = vals.reduce((a, b) => a + b, 0) / vals.length;
+    dp[k] = Math.sqrt(vals.reduce((a, b) => a + (b - media[k])**2, 0) / vals.length);
+  });
+  const vals = perfis.map(p => IND.map(([k]) => (p[k] - media[k]) / dp[k]));
+  heatmap($("#c-heat"), perfis.map(p => p.rotulo + " (" + p.n + ")"), IND.map(i => i[1]), vals);
+  $("#t-heat").appendChild(tabela(["Perfil", "Seleções", ...IND.map(i => i[1]), "Classificação média", "Taxa de avanço"],
+    perfis.map(p => [esc(p.rotulo), p.n, ...IND.map(([k]) => nf(p[k], 2)),
+      nf(p.classificacao_media, 1) + "º", nf(p.taxa_avanco_pct, 0) + "%"])));
+
+  /* composição dos clusters */
+  $("#cluster-list").innerHTML = perfis.map(p => {
+    const membros = D.selecoes.filter(d => d.perfil_cluster === p.rotulo)
+      .sort((a, b) => a.classificacao_final - b.classificacao_final).map(d => d.selecao);
+    return `<div style="margin-bottom:13px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px">
+        <strong style="font-size:13.5px">${esc(p.rotulo)}</strong>
+        <span class="pill">${p.n} seleções · ${nf(p.taxa_avanco_pct, 0)}% avançaram</span></div>
+      <div style="font-size:12.5px;color:var(--ink-2);line-height:1.5">${membros.map(esc).join(" · ")}</div></div>`;
+  }).join("");
+
+  /* regras de associação */
+  const rg = m.regras_associacao.slice(0, 8);
+  const maxLift = Math.max(...rg.map(r => r.lift));
+  $("#regras").innerHTML = rg.map(r => `
+    <div style="border-bottom:1px solid var(--grid);padding:8px 0">
+      <div style="font-size:12.5px;line-height:1.45">
+        <span style="color:var(--muted)">SE</span> ${esc(r.antecedentes.replace(/_/g, " ").toLowerCase())}
+        <span style="color:var(--muted)">ENTÃO</span> <b>${esc(r.consequentes.replace(/_/g, " ").toLowerCase())}</b></div>
+      <div style="display:flex;align-items:center;gap:10px;margin-top:4px;font-size:11.5px;color:var(--ink-2)">
+        <span class="num">suporte ${nf(100*r.suporte, 0)}%</span>
+        <span class="num">confiança ${nf(100*r.confianca, 0)}%</span>
+        <span class="bar-cell" style="flex:1"><span class="b" style="width:${100*r.lift/maxLift}%"></span>
+        <span class="num">lift ${nf(r.lift, 2)}</span></span></div></div>`).join("");
+  $("#t-regras").appendChild(tabela(["Se (antecedente)", "Então", "Suporte", "Confiança", "Lift"],
+    (m.regras_associacao_todas || m.regras_associacao).map(r => [esc(r.antecedentes.replace(/_/g, " ").toLowerCase()),
+      esc(r.consequentes.replace(/_/g, " ").toLowerCase()), nf(100*r.suporte, 1) + "%",
+      nf(100*r.confianca, 1) + "%", nf(r.lift, 2)]), {scroll: true}));
+  $("#foot-regras").textContent = `${m.apriori_parametros.itemsets_frequentes} itemsets frequentes e `
+    + `${m.apriori_parametros.regras_geradas} regras geradas; ${m.apriori_parametros.regras_uteis} `
+    + "restaram após filtrar por lift acima de 1,1, exigir desfecho competitivo como consequente e "
+    + "descartar antecedentes redundantes. O painel mostra as quatro melhores de cada desfecho; "
+    + "a tabela traz todas.";
+
+  /* árvore de decisão */
+  const a = m.arvore_decisao;
+  $("#tree").innerHTML = `
+    <div class="node">Gols marcados por jogo ≤ 1,12?</div>
+    <div class="lvl">
+      <div style="color:var(--ink-2);font-size:12px;margin-top:6px">SIM → Gols sofridos por jogo ≤ 1,29?</div>
+      <div class="lvl">
+        <div class="node leaf" style="margin-top:6px">SIM → <b>avança ao mata-mata</b></div><br>
+        <div class="node leaf no">NÃO → <b>eliminado na fase de grupos</b></div>
+      </div>
+      <div style="color:var(--ink-2);font-size:12px;margin-top:10px">NÃO (marca mais de 1,12 por jogo)</div>
+      <div class="lvl"><div class="node leaf" style="margin-top:6px">→ <b>avança ao mata-mata</b></div></div>
+    </div>`;
+  $("#s-arvore").innerHTML = [
+    [nf(100*a.acuracia_loocv, 1) + "%", "acurácia (leave-one-out)"],
+    [nf(100*a.baseline_maioria, 1) + "%", "acerto da classe majoritária"],
+    [nf(100*a.recall, 0) + "%", "recall de quem avançou"],
+  ].map(([v, k]) => `<div class="stat"><div class="v">${v}</div><div class="k">${esc(k)}</div></div>`).join("");
+
+  /* diagnóstico de k */
+  const dk = m.diagnostico_k;
+  barrasV($("#c-k"), dk.map(d => "k = " + d.k), [
+    {name: "Índice de silhueta", color: "var(--s1)", values: dk.map(d => d.silhueta)},
+  ], {showValues: true, dec: 3, h: 200, axDec: 2, aria: "Índice de silhueta por número de clusters"});
+
+  $("#foot-pca").textContent = `As duas primeiras componentes explicam `
+    + `${nf(100*m.pca.variancia_acumulada, 1)}% da variância total (PC1 = `
+    + `${nf(100*m.pca.variancia_explicada[0], 1)}%), o que indica um eixo dominante de qualidade técnica.`;
+}
+
+function partidasPaineis(){
+  /* chaveamento */
+  const fases = ["16 avos de final", "Oitavas de final", "Quartas de final", "Semifinal",
+                 "Disputa de 3º lugar", "Final"];
+  $("#bracket").innerHTML = fases.map(f => {
+    const ms = D.partidas.filter(p => p.fase === f);
+    return `<div class="bcol"><h4>${esc(f.replace(" de final", ""))}</h4>` + ms.map(p => {
+      const wc = p.vencedor === p.selecao_casa, wf = p.vencedor === p.selecao_fora;
+      const ex = p.penaltis ? `pênaltis ${esc(p.penaltis)}` : (p.prorrogacao ? "prorrogação" : "");
+      return `<div class="match">
+        <div class="l ${wc ? "w" : ""}"><span>${esc(p.selecao_casa)}</span><span class="num">${p.gols_casa}</span></div>
+        <div class="l ${wf ? "w" : ""}"><span>${esc(p.selecao_fora)}</span><span class="num">${p.gols_fora}</span></div>
+        ${ex ? `<div class="x">${ex}</div>` : ""}</div>`;
+    }).join("") + "</div>";
+  }).join("");
+
+  /* tabelas dos grupos */
+  $("#t-grupos").innerHTML = D.grupos.map(g => {
+    const rows = g.tabela.map(t => `<tr><td>${t.pos}. ${esc(t.selecao)}</td><td>${t.Pts}</td>
+      <td>${t.V}-${t.E}-${t.D}</td><td>${t.GP}:${t.GC}</td><td>${t.SG > 0 ? "+" : ""}${t.SG}</td></tr>`).join("");
+    return `<div style="margin-bottom:14px"><div style="font-size:11px;letter-spacing:.09em;text-transform:uppercase;
+      color:var(--accent);font-weight:600;margin-bottom:4px">Grupo ${g.grupo}</div>
+      <table><thead><tr><th>Seleção</th><th>Pts</th><th>V-E-D</th><th>Gols</th><th>SG</th></tr></thead>
+      <tbody>${rows}</tbody></table></div>`;
+  }).join("");
+}
+
+/* =====================================================================
+   5. PAINÉIS REATIVOS AOS FILTROS
+   ===================================================================== */
+function render(){
+  const sel = selecoesFiltradas(), par = partidasFiltradas();
+  $("#cnt-sel").textContent = sel.length + "/48";
+  $("#cnt-par").textContent = par.length + "/104";
+
+  /* --- ranking --- */
+  const met = METRICAS.find(m => m.k === estado.metrica);
+  const ord = sel.slice().sort((a, b) => met.asc ? a[met.k] - b[met.k] : b[met.k] - a[met.k]).slice(0, 16);
+  $("#rank-title").textContent = met.n;
+  $("#rank-cap").textContent = "As 16 primeiras seleções entre as filtradas, ordenadas por " + met.desc
+    + (met.asc ? " (menor é melhor)." : ".");
+  barrasH($("#c-rank"), ord.map(d => ({
+    label: d.selecao, value: d[met.k], hl: d.selecao === D.meta.campeao,
+    color: d.selecao === D.meta.campeao ? "var(--s2)" : "var(--s1)",
+    vlabel: nf(d[met.k], met.d),
+    tip: `<b>${esc(d.selecao)}</b> (${d.cod})<br>${esc(met.n)}: ${nf(d[met.k], met.d)}`
+      + `<br>Classificação final: ${d.classificacao_final}º · ${esc(d.fase_final)}`
+      + `<br>${d.vitorias}V ${d.empates}E ${d.derrotas}D · ${d.gols_pro}:${d.gols_contra}`
+  })), {dec: met.d, axDec: met.d > 1 ? 1 : met.d});
+  const trank = $("#t-rank"); trank.innerHTML = "";
+  trank.appendChild(tabela(["Seleção", "Confederação", met.n, "V-E-D", "Gols", "Classificação"],
+    sel.slice().sort((a, b) => met.asc ? a[met.k] - b[met.k] : b[met.k] - a[met.k])
+      .map(d => [esc(d.selecao), esc(d.confederacao), nf(d[met.k], met.d),
+        `${d.vitorias}-${d.empates}-${d.derrotas}`, `${d.gols_pro}:${d.gols_contra}`,
+        d.classificacao_final + "º"]), {scroll: true}));
+
+  /* --- quadrante ataque x defesa --- */
+  const medX = mediana(D.selecoes.map(d => d.xg_por_jogo));
+  const medY = mediana(D.selecoes.map(d => d.gols_sofridos_por_jogo));
+  const destaques = new Set(["Espanha", "Argentina", "Inglaterra", "França", "Brasil", "Marrocos",
+    "Colômbia", "Paraguai", "Turquia", "Alemanha"]);
+  const vis = new Set(sel.map(d => d.selecao));
+  dispersao($("#c-quad"), D.selecoes.map(d => ({
+    x: d.xg_por_jogo, y: d.gols_sofridos_por_jogo,
+    color: d.avancou_mata_mata ? "var(--s1)" : "var(--s2)",
+    dim: !vis.has(d.selecao), r: d.top8 ? 6.5 : 5,
+    show: vis.has(d.selecao) && (destaques.has(d.selecao) || sel.length <= 12),
+    label: d.cod,
+    tip: `<b>${esc(d.selecao)}</b><br>xG por jogo: ${nf(d.xg_por_jogo, 2)}`
+      + `<br>Gols sofridos por jogo: ${nf(d.gols_sofridos_por_jogo, 2)}`
+      + `<br>Perfil: ${esc(d.perfil_cluster)}<br>${d.classificacao_final}º lugar`
+  })), {xLabel: "xG por jogo →", yLabel: "↑ gols sofridos por jogo", dec: 2,
+        refX: medX, refXLabel: "mediana", refY: medY, refYLabel: "mediana", h: 340,
+        aria: "Dispersão de gols esperados contra gols sofridos por jogo"});
+  $("#l-quad").innerHTML = `<span><i style="background:var(--s1)"></i>Avançou ao mata-mata</span>
+    <span><i style="background:var(--s2)"></i>Eliminado na fase de grupos</span>
+    <span style="color:var(--muted)">Marcas maiores: chegou às quartas</span>`;
+  const tq = $("#t-quad"); tq.innerHTML = "";
+  tq.appendChild(tabela(["Seleção", "xG/jogo", "Gols/jogo", "Gols sofridos/jogo", "Perfil", "Classificação"],
+    sel.slice().sort((a, b) => a.classificacao_final - b.classificacao_final)
+      .map(d => [esc(d.selecao), nf(d.xg_por_jogo, 2), nf(d.gols_por_jogo, 2),
+        nf(d.gols_sofridos_por_jogo, 2), esc(d.perfil_cluster), d.classificacao_final + "º"]), {scroll: true}));
+
+  /* --- conversão gols - xG --- */
+  const conv = sel.slice().sort((a, b) => b.gols_menos_xg - a.gols_menos_xg);
+  const top = conv.slice(0, 7).concat(conv.slice(-7).reverse().slice(0, 7));
+  barrasDiv($("#c-conv"), top.map(d => ({label: d.selecao + " (" + d.cod + ")",
+    value: d.gols_menos_xg,
+    tip: `<b>${esc(d.selecao)}</b><br>Gols: ${d.gols_pro} · xG: ${nf(d.xg, 1)}`
+      + `<br>Diferença: ${d.gols_menos_xg > 0 ? "+" : ""}${nf(d.gols_menos_xg, 1)}`})), {posGood: true});
+  const tc = $("#t-conv"); tc.innerHTML = "";
+  tc.appendChild(tabela(["Seleção", "Gols", "xG", "Gols − xG"],
+    conv.map(d => [esc(d.selecao), d.gols_pro, nf(d.xg, 1),
+      (d.gols_menos_xg > 0 ? "+" : "") + nf(d.gols_menos_xg, 1)]), {scroll: true}));
+
+  /* --- artilharia --- */
+  const nomes = new Set(sel.map(d => d.selecao));
+  const arts = D.artilharia.filter(a => nomes.has(a.selecao)).slice(0, 14);
+  barrasH($("#c-art"), arts.map(a => ({label: a.jogador + " (" + a.selecao + ")", value: a.gols,
+    vlabel: String(a.gols), color: a.jogador === D.meta.premios.chuteira_de_ouro.jogador ? "var(--s2)" : "var(--s1)",
+    hl: a.jogador === D.meta.premios.chuteira_de_ouro.jogador,
+    tip: `<b>${esc(a.jogador)}</b> — ${esc(a.selecao)}<br>${a.gols} gols em ${a.partidas} partidas`
+      + `<br>${nf(a.minutos_por_gol, 0)} minutos por gol`
+      + (a.assistencias ? `<br>${a.assistencias} assistências` : "")})),
+    {dec: 0, axDec: 0, padL: 190});
+  const ta = $("#t-art"); ta.innerHTML = "";
+  ta.appendChild(tabela(["Jogador", "Seleção", "Gols", "Partidas", "Minutos", "Min./gol", "Assistências"],
+    D.artilharia.filter(a => nomes.has(a.selecao)).map(a => [esc(a.jogador), esc(a.selecao), a.gols,
+      a.partidas, ni(a.minutos), nf(a.minutos_por_gol, 0), a.assistencias ?? "–"]), {scroll: true}));
+  $("#foot-art").textContent = arts.length
+    ? "Em destaque, o vencedor da Chuteira de Ouro. Assistências publicadas apenas para os sete primeiros."
+    : "Nenhum artilheiro entre as seleções filtradas.";
+
+  /* --- PCA facetado --- */
+  pcaFacets($("#c-pca"), sel);
+  const tp = $("#t-pca"); tp.innerHTML = "";
+  tp.appendChild(tabela(["Seleção", "Perfil", "PC1", "PC2", "Classificação"],
+    sel.slice().sort((a, b) => a.classificacao_final - b.classificacao_final)
+      .map(d => [esc(d.selecao), esc(d.perfil_cluster), nf(d.pca_x, 2), nf(d.pca_y, 2),
+        d.classificacao_final + "º"]), {scroll: true}));
+
+  /* --- tabela de partidas --- */
+  $("#cap-partidas").textContent = par.length + " partidas no filtro atual, da fase de grupos à final.";
+  const tpar = $("#t-partidas"); tpar.innerHTML = "";
+  tpar.appendChild(tabela(["Fase", "Confronto", "Placar", "Decisão", "Gols"],
+    par.map(p => [esc(p.fase) + (p.grupo ? " · " + p.grupo : ""),
+      esc(p.selecao_casa) + " x " + esc(p.selecao_fora),
+      `${p.gols_casa} – ${p.gols_fora}`,
+      p.penaltis ? "pênaltis " + esc(p.penaltis) : (p.prorrogacao ? "prorrogação" : "tempo normal"),
+      p.total_gols]), {scroll: true}));
+}
+function mediana(a){
+  const s = a.slice().sort((x, y) => x - y), n = s.length;
+  return n % 2 ? s[(n-1)/2] : (s[n/2 - 1] + s[n/2]) / 2;
+}
+
+/* =====================================================================
+   6. INICIALIZAÇÃO
+   ===================================================================== */
+function montaFiltros(){
+  const opt = (v, t) => `<option value="${esc(v)}">${esc(t ?? v)}</option>`;
+  $("#f-fase").innerHTML = FASES.map(f => opt(f)).join("");
+  const confs = ["Todas", ...Array.from(new Set(D.selecoes.map(d => d.confederacao))).sort()];
+  $("#f-conf").innerHTML = confs.map(c => opt(c)).join("");
+  const perfis = ["Todos", ...D.mineracao.kmeans.perfis.slice()
+    .sort((a, b) => a.classificacao_media - b.classificacao_media).map(p => p.rotulo)];
+  $("#f-perfil").innerHTML = perfis.map(p => opt(p)).join("");
+  $("#f-metrica").innerHTML = METRICAS.map(m => opt(m.k, m.n)).join("");
+
+  $("#f-fase").onchange = e => { estado.fase = e.target.value; render(); };
+  $("#f-conf").onchange = e => { estado.conf = e.target.value; render(); };
+  $("#f-perfil").onchange = e => { estado.perfil = e.target.value; render(); };
+  $("#f-metrica").onchange = e => { estado.metrica = e.target.value; render(); };
+  let deb; $("#f-busca").oninput = e => {
+    clearTimeout(deb); deb = setTimeout(() => { estado.busca = e.target.value; render(); }, 180);
+  };
+  $("#f-limpar").onclick = () => {
+    Object.assign(estado, {fase: "Todas as fases", conf: "Todas", perfil: "Todos",
+      metrica: METRICAS[0].k, busca: ""});
+    $("#f-fase").value = estado.fase; $("#f-conf").value = "Todas";
+    $("#f-perfil").value = "Todos"; $("#f-metrica").value = estado.metrica; $("#f-busca").value = "";
+    render();
+  };
+}
+
+cabecalho();
+panorama();
+estatisticaPaineis();
+mineracaoPaineis();
+partidasPaineis();
+montaFiltros();
+render();
+bindTableToggles();
+</script>

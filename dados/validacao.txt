@@ -1,0 +1,32 @@
+RELATORIO DE VALIDACAO DA BASE - COPA DO MUNDO FIFA 2026
+==============================================================
+Partidas na base .................. 104 (esperado: 104)
+  fase de grupos .................. 72 (esperado: 72)
+  mata-mata ....................... 32 (esperado: 32)
+Selecoes na base .................. 48 (esperado: 48)
+Total de gols ..................... 308 (fontes: 308)
+Media de gols por partida ......... 2.962 (fontes: 2,96)
+
+A) Reconstrucao das tabelas de grupo a partir dos placares
+   Linhas conferidas: 48 | divergencias: 0
+
+B) Gols pro/contra por selecao: soma das partidas x tabela agregada da fonte
+   Selecoes conferidas: 48 | divergencias: 0
+
+C) Numero de jogos x fase alcancada (coerencia estrutural)
+   Divergencias: 0
+
+D) Integridade referencial e valores ausentes
+   Selecoes sem estatisticas tecnicas: 0
+   Selecoes sem confederacao ........: 0
+   Selecoes sem classificacao final .: 0
+   Empates no mata-mata sem penaltis : 0
+   Artilheiros com assistencia ausente: 22 de 28
+
+LIMITACOES CONHECIDAS (documentadas nas fontes):
+   - Mando de campo (casa/fora) divergente entre fontes em ~10 partidas de grupo;
+     os placares nao sao afetados. Nenhuma analise deste estudo usa mando de campo
+     como variavel explicativa na fase de grupos.
+   - Faltas cometidas por selecao: nao publicadas por nenhuma fonte acessivel.
+   - Assistencias individuais publicadas apenas para os 7 primeiros artilheiros.
+   - Pontos exatos da classificacao geral FIFA nao publicados (apenas a ordem).

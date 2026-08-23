@@ -1,0 +1,219 @@
+{
+  "grupos": [
+    {
+      "grupo": "A",
+      "tabela": [
+        {"pos": 1, "selecao": "México", "J": 3, "V": 3, "E": 0, "D": 0, "GP": 6, "GC": 0, "SG": 6, "Pts": 9},
+        {"pos": 2, "selecao": "África do Sul", "J": 3, "V": 1, "E": 1, "D": 1, "GP": 2, "GC": 3, "SG": -1, "Pts": 4},
+        {"pos": 3, "selecao": "Coreia do Sul", "J": 3, "V": 1, "E": 0, "D": 2, "GP": 2, "GC": 3, "SG": -1, "Pts": 3},
+        {"pos": 4, "selecao": "Chéquia", "J": 3, "V": 0, "E": 1, "D": 2, "GP": 2, "GC": 6, "SG": -4, "Pts": 1}
+      ],
+      "partidas": [
+        {"casa": "México", "fora": "África do Sul", "gols_casa": 2, "gols_fora": 0},
+        {"casa": "Coreia do Sul", "fora": "Chéquia", "gols_casa": 2, "gols_fora": 1},
+        {"casa": "Chéquia", "fora": "África do Sul", "gols_casa": 1, "gols_fora": 1},
+        {"casa": "México", "fora": "Coreia do Sul", "gols_casa": 1, "gols_fora": 0},
+        {"casa": "África do Sul", "fora": "Coreia do Sul", "gols_casa": 1, "gols_fora": 0},
+        {"casa": "Chéquia", "fora": "México", "gols_casa": 0, "gols_fora": 3}
+      ]
+    },
+    {
+      "grupo": "B",
+      "tabela": [
+        {"pos": 1, "selecao": "Suíça", "J": 3, "V": 2, "E": 1, "D": 0, "GP": 7, "GC": 3, "SG": 4, "Pts": 7},
+        {"pos": 2, "selecao": "Canadá", "J": 3, "V": 1, "E": 1, "D": 1, "GP": 8, "GC": 3, "SG": 5, "Pts": 4},
+        {"pos": 3, "selecao": "Bósnia e Herzegovina", "J": 3, "V": 1, "E": 1, "D": 1, "GP": 5, "GC": 6, "SG": -1, "Pts": 4},
+        {"pos": 4, "selecao": "Catar", "J": 3, "V": 0, "E": 1, "D": 2, "GP": 2, "GC": 10, "SG": -8, "Pts": 1}
+      ],
+      "partidas": [
+        {"casa": "Canadá", "fora": "Bósnia e Herzegovina", "gols_casa": 1, "gols_fora": 1},
+        {"casa": "Catar", "fora": "Suíça", "gols_casa": 1, "gols_fora": 1},
+        {"casa": "Suíça", "fora": "Bósnia e Herzegovina", "gols_casa": 4, "gols_fora": 1},
+        {"casa": "Canadá", "fora": "Catar", "gols_casa": 6, "gols_fora": 0},
+        {"casa": "Bósnia e Herzegovina", "fora": "Catar", "gols_casa": 3, "gols_fora": 1},
+        {"casa": "Suíça", "fora": "Canadá", "gols_casa": 2, "gols_fora": 1}
+      ]
+    },
+    {
+      "grupo": "C",
+      "tabela": [
+        {"pos": 1, "selecao": "Brasil", "J": 3, "V": 2, "E": 1, "D": 0, "GP": 7, "GC": 1, "SG": 6, "Pts": 7},
+        {"pos": 2, "selecao": "Marrocos", "J": 3, "V": 2, "E": 1, "D": 0, "GP": 6, "GC": 3, "SG": 3, "Pts": 7},
+        {"pos": 3, "selecao": "Escócia", "J": 3, "V": 1, "E": 0, "D": 2, "GP": 1, "GC": 4, "SG": -3, "Pts": 3},
+        {"pos": 4, "selecao": "Haiti", "J": 3, "V": 0, "E": 0, "D": 3, "GP": 2, "GC": 8, "SG": -6, "Pts": 0}
+      ],
+      "partidas": [
+        {"casa": "Brasil", "fora": "Marrocos", "gols_casa": 1, "gols_fora": 1},
+        {"casa": "Haiti", "fora": "Escócia", "gols_casa": 0, "gols_fora": 1},
+        {"casa": "Escócia", "fora": "Marrocos", "gols_casa": 0, "gols_fora": 1},
+        {"casa": "Brasil", "fora": "Haiti", "gols_casa": 3, "gols_fora": 0},
+        {"casa": "Marrocos", "fora": "Haiti", "gols_casa": 4, "gols_fora": 2},
+        {"casa": "Escócia", "fora": "Brasil", "gols_casa": 0, "gols_fora": 3}
+      ]
+    },
+    {
+      "grupo": "D",
+      "tabela": [
+        {"pos": 1, "selecao": "Estados Unidos", "J": 3, "V": 2, "E": 0, "D": 1, "GP": 8, "GC": 4, "SG": 4, "Pts": 6},
+        {"pos": 2, "selecao": "Austrália", "J": 3, "V": 1, "E": 1, "D": 1, "GP": 2, "GC": 2, "SG": 0, "Pts": 4},
+        {"pos": 3, "selecao": "Paraguai", "J": 3, "V": 1, "E": 1, "D": 1, "GP": 2, "GC": 4, "SG": -2, "Pts": 4},
+        {"pos": 4, "selecao": "Turquia", "J": 3, "V": 1, "E": 0, "D": 2, "GP": 3, "GC": 5, "SG": -2, "Pts": 3}
+      ],
+      "partidas": [
+        {"casa": "Estados Unidos", "fora": "Paraguai", "gols_casa": 4, "gols_fora": 1},
+        {"casa": "Austrália", "fora": "Turquia", "gols_casa": 2, "gols_fora": 0},
+        {"casa": "Estados Unidos", "fora": "Austrália", "gols_casa": 2, "gols_fora": 0},
+        {"casa": "Turquia", "fora": "Paraguai", "gols_casa": 0, "gols_fora": 1},
+        {"casa": "Turquia", "fora": "Estados Unidos", "gols_casa": 3, "gols_fora": 2},
+        {"casa": "Paraguai", "fora": "Austrália", "gols_casa": 0, "gols_fora": 0}
+      ]
+    },
+    {
+      "grupo": "E",
+      "tabela": [
+        {"pos": 1, "selecao": "Alemanha", "J": 3, "V": 2, "E": 0, "D": 1, "GP": 10, "GC": 4, "SG": 6, "Pts": 6},
+        {"pos": 2, "selecao": "Costa do Marfim", "J": 3, "V": 2, "E": 0, "D": 1, "GP": 4, "GC": 2, "SG": 2, "Pts": 6},
+        {"pos": 3, "selecao": "Equador", "J": 3, "V": 1, "E": 1, "D": 1, "GP": 2, "GC": 2, "SG": 0, "Pts": 4},
+        {"pos": 4, "selecao": "Curaçao", "J": 3, "V": 0, "E": 1, "D": 2, "GP": 1, "GC": 9, "SG": -8, "Pts": 1}
+      ],
+      "partidas": [
+        {"casa": "Alemanha", "fora": "Curaçao", "gols_casa": 7, "gols_fora": 1},
+        {"casa": "Costa do Marfim", "fora": "Equador", "gols_casa": 1, "gols_fora": 0},
+        {"casa": "Alemanha", "fora": "Costa do Marfim", "gols_casa": 2, "gols_fora": 1},
+        {"casa": "Equador", "fora": "Curaçao", "gols_casa": 0, "gols_fora": 0},
+        {"casa": "Curaçao", "fora": "Costa do Marfim", "gols_casa": 0, "gols_fora": 2},
+        {"casa": "Equador", "fora": "Alemanha", "gols_casa": 2, "gols_fora": 1}
+      ]
+    },
+    {
+      "grupo": "F",
+      "tabela": [
+        {"pos": 1, "selecao": "Países Baixos", "J": 3, "V": 2, "E": 1, "D": 0, "GP": 10, "GC": 4, "SG": 6, "Pts": 7},
+        {"pos": 2, "selecao": "Japão", "J": 3, "V": 1, "E": 2, "D": 0, "GP": 7, "GC": 3, "SG": 4, "Pts": 5},
+        {"pos": 3, "selecao": "Suécia", "J": 3, "V": 1, "E": 1, "D": 1, "GP": 7, "GC": 7, "SG": 0, "Pts": 4},
+        {"pos": 4, "selecao": "Tunísia", "J": 3, "V": 0, "E": 0, "D": 3, "GP": 2, "GC": 12, "SG": -10, "Pts": 0}
+      ],
+      "partidas": [
+        {"casa": "Países Baixos", "fora": "Japão", "gols_casa": 2, "gols_fora": 2},
+        {"casa": "Suécia", "fora": "Tunísia", "gols_casa": 5, "gols_fora": 1},
+        {"casa": "Países Baixos", "fora": "Suécia", "gols_casa": 5, "gols_fora": 1},
+        {"casa": "Tunísia", "fora": "Japão", "gols_casa": 0, "gols_fora": 4},
+        {"casa": "Japão", "fora": "Suécia", "gols_casa": 1, "gols_fora": 1},
+        {"casa": "Tunísia", "fora": "Países Baixos", "gols_casa": 1, "gols_fora": 3}
+      ]
+    },
+    {
+      "grupo": "G",
+      "tabela": [
+        {"pos": 1, "selecao": "Bélgica", "J": 3, "V": 1, "E": 2, "D": 0, "GP": 6, "GC": 2, "SG": 4, "Pts": 5},
+        {"pos": 2, "selecao": "Egito", "J": 3, "V": 1, "E": 2, "D": 0, "GP": 5, "GC": 3, "SG": 2, "Pts": 5},
+        {"pos": 3, "selecao": "Irã", "J": 3, "V": 0, "E": 3, "D": 0, "GP": 3, "GC": 3, "SG": 0, "Pts": 3},
+        {"pos": 4, "selecao": "Nova Zelândia", "J": 3, "V": 0, "E": 1, "D": 2, "GP": 4, "GC": 10, "SG": -6, "Pts": 1}
+      ],
+      "partidas": [
+        {"casa": "Egito", "fora": "Bélgica", "gols_casa": 1, "gols_fora": 1},
+        {"casa": "Irã", "fora": "Nova Zelândia", "gols_casa": 2, "gols_fora": 2},
+        {"casa": "Bélgica", "fora": "Irã", "gols_casa": 0, "gols_fora": 0},
+        {"casa": "Nova Zelândia", "fora": "Egito", "gols_casa": 1, "gols_fora": 3},
+        {"casa": "Egito", "fora": "Irã", "gols_casa": 1, "gols_fora": 1},
+        {"casa": "Nova Zelândia", "fora": "Bélgica", "gols_casa": 1, "gols_fora": 5}
+      ]
+    },
+    {
+      "grupo": "H",
+      "tabela": [
+        {"pos": 1, "selecao": "Espanha", "J": 3, "V": 2, "E": 1, "D": 0, "GP": 5, "GC": 0, "SG": 5, "Pts": 7},
+        {"pos": 2, "selecao": "Cabo Verde", "J": 3, "V": 0, "E": 3, "D": 0, "GP": 2, "GC": 2, "SG": 0, "Pts": 3},
+        {"pos": 3, "selecao": "Uruguai", "J": 3, "V": 0, "E": 2, "D": 1, "GP": 3, "GC": 4, "SG": -1, "Pts": 2},
+        {"pos": 4, "selecao": "Arábia Saudita", "J": 3, "V": 0, "E": 2, "D": 1, "GP": 1, "GC": 5, "SG": -4, "Pts": 2}
+      ],
+      "partidas": [
+        {"casa": "Espanha", "fora": "Cabo Verde", "gols_casa": 0, "gols_fora": 0},
+        {"casa": "Arábia Saudita", "fora": "Uruguai", "gols_casa": 1, "gols_fora": 1},
+        {"casa": "Espanha", "fora": "Arábia Saudita", "gols_casa": 4, "gols_fora": 0},
+        {"casa": "Uruguai", "fora": "Cabo Verde", "gols_casa": 2, "gols_fora": 2},
+        {"casa": "Cabo Verde", "fora": "Arábia Saudita", "gols_casa": 0, "gols_fora": 0},
+        {"casa": "Uruguai", "fora": "Espanha", "gols_casa": 0, "gols_fora": 1}
+      ]
+    },
+    {
+      "grupo": "I",
+      "tabela": [
+        {"pos": 1, "selecao": "França", "J": 3, "V": 3, "E": 0, "D": 0, "GP": 10, "GC": 2, "SG": 8, "Pts": 9},
+        {"pos": 2, "selecao": "Noruega", "J": 3, "V": 2, "E": 0, "D": 1, "GP": 8, "GC": 7, "SG": 1, "Pts": 6},
+        {"pos": 3, "selecao": "Senegal", "J": 3, "V": 1, "E": 0, "D": 2, "GP": 8, "GC": 6, "SG": 2, "Pts": 3},
+        {"pos": 4, "selecao": "Iraque", "J": 3, "V": 0, "E": 0, "D": 3, "GP": 1, "GC": 12, "SG": -11, "Pts": 0}
+      ],
+      "partidas": [
+        {"casa": "França", "fora": "Senegal", "gols_casa": 3, "gols_fora": 1},
+        {"casa": "Iraque", "fora": "Noruega", "gols_casa": 1, "gols_fora": 4},
+        {"casa": "Noruega", "fora": "França", "gols_casa": 1, "gols_fora": 4},
+        {"casa": "Senegal", "fora": "Iraque", "gols_casa": 5, "gols_fora": 0},
+        {"casa": "França", "fora": "Iraque", "gols_casa": 3, "gols_fora": 0},
+        {"casa": "Noruega", "fora": "Senegal", "gols_casa": 3, "gols_fora": 2}
+      ]
+    },
+    {
+      "grupo": "J",
+      "tabela": [
+        {"pos": 1, "selecao": "Argentina", "J": 3, "V": 3, "E": 0, "D": 0, "GP": 8, "GC": 1, "SG": 7, "Pts": 9},
+        {"pos": 2, "selecao": "Áustria", "J": 3, "V": 1, "E": 1, "D": 1, "GP": 6, "GC": 6, "SG": 0, "Pts": 4},
+        {"pos": 3, "selecao": "Argélia", "J": 3, "V": 1, "E": 1, "D": 1, "GP": 5, "GC": 7, "SG": -2, "Pts": 4},
+        {"pos": 4, "selecao": "Jordânia", "J": 3, "V": 0, "E": 0, "D": 3, "GP": 3, "GC": 8, "SG": -5, "Pts": 0}
+      ],
+      "partidas": [
+        {"casa": "Argentina", "fora": "Argélia", "gols_casa": 3, "gols_fora": 0},
+        {"casa": "Áustria", "fora": "Jordânia", "gols_casa": 3, "gols_fora": 1},
+        {"casa": "Argentina", "fora": "Áustria", "gols_casa": 2, "gols_fora": 0},
+        {"casa": "Jordânia", "fora": "Argélia", "gols_casa": 1, "gols_fora": 2},
+        {"casa": "Argélia", "fora": "Áustria", "gols_casa": 3, "gols_fora": 3},
+        {"casa": "Jordânia", "fora": "Argentina", "gols_casa": 1, "gols_fora": 3}
+      ]
+    },
+    {
+      "grupo": "K",
+      "tabela": [
+        {"pos": 1, "selecao": "Colômbia", "J": 3, "V": 2, "E": 1, "D": 0, "GP": 4, "GC": 1, "SG": 3, "Pts": 7},
+        {"pos": 2, "selecao": "Portugal", "J": 3, "V": 1, "E": 2, "D": 0, "GP": 6, "GC": 1, "SG": 5, "Pts": 5},
+        {"pos": 3, "selecao": "Congo (RDC)", "J": 3, "V": 1, "E": 1, "D": 1, "GP": 4, "GC": 3, "SG": 1, "Pts": 4},
+        {"pos": 4, "selecao": "Uzbequistão", "J": 3, "V": 0, "E": 0, "D": 3, "GP": 2, "GC": 11, "SG": -9, "Pts": 0}
+      ],
+      "partidas": [
+        {"casa": "Portugal", "fora": "Congo (RDC)", "gols_casa": 1, "gols_fora": 1},
+        {"casa": "Colômbia", "fora": "Uzbequistão", "gols_casa": 3, "gols_fora": 1},
+        {"casa": "Portugal", "fora": "Uzbequistão", "gols_casa": 5, "gols_fora": 0},
+        {"casa": "Colômbia", "fora": "Congo (RDC)", "gols_casa": 1, "gols_fora": 0},
+        {"casa": "Colômbia", "fora": "Portugal", "gols_casa": 0, "gols_fora": 0},
+        {"casa": "Congo (RDC)", "fora": "Uzbequistão", "gols_casa": 3, "gols_fora": 1}
+      ]
+    },
+    {
+      "grupo": "L",
+      "tabela": [
+        {"pos": 1, "selecao": "Inglaterra", "J": 3, "V": 2, "E": 1, "D": 0, "GP": 6, "GC": 2, "SG": 4, "Pts": 7},
+        {"pos": 2, "selecao": "Croácia", "J": 3, "V": 2, "E": 0, "D": 1, "GP": 5, "GC": 5, "SG": 0, "Pts": 6},
+        {"pos": 3, "selecao": "Gana", "J": 3, "V": 1, "E": 1, "D": 1, "GP": 2, "GC": 2, "SG": 0, "Pts": 4},
+        {"pos": 4, "selecao": "Panamá", "J": 3, "V": 0, "E": 0, "D": 3, "GP": 0, "GC": 4, "SG": -4, "Pts": 0}
+      ],
+      "partidas": [
+        {"casa": "Inglaterra", "fora": "Croácia", "gols_casa": 4, "gols_fora": 2},
+        {"casa": "Gana", "fora": "Panamá", "gols_casa": 1, "gols_fora": 0},
+        {"casa": "Inglaterra", "fora": "Gana", "gols_casa": 0, "gols_fora": 0},
+        {"casa": "Croácia", "fora": "Panamá", "gols_casa": 1, "gols_fora": 0},
+        {"casa": "Panamá", "fora": "Inglaterra", "gols_casa": 0, "gols_fora": 2},
+        {"casa": "Croácia", "fora": "Gana", "gols_casa": 2, "gols_fora": 1}
+      ]
+    }
+  ],
+  "fontes": [
+    "https://www.foxsports.com/soccer/fifa-world-cup/standings",
+    "https://www.cbssports.com/soccer/news/world-cup-group-standings-table-results/",
+    "https://sports.yahoo.com/soccer/article/2026-world-cup-results-standings-and-schedule-live-scores-group-stage-updates-and-how-to-watch-050724193.html",
+    "https://www.fourfourtwo.com/competition/all-of-the-world-cup-scores-so-far-at-the-2026-tournament",
+    "https://www.nbcsports.com/soccer/news/2026-world-cup-group-stage-table-full-standings-for-all-12-groups"
+  ],
+  "observacoes": [
+    "Os 72 placares foram confirmados em pelo menos tres fontes independentes e validados por aritmetica contra as tabelas finais (GP/GC/SG/Pts fecham nos 12 grupos).",
+    "Em cerca de 10 partidas as fontes divergem sobre o mando de campo (qual equipe e listada primeiro). Adotada a ordem da FourFourTwo. Os placares nao sao afetados."
+  ]
+}
