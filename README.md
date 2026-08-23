@@ -1,10 +1,10 @@
 # Copa do Mundo FIFA 2026 — da base de dados ao dashboard
 
-Estudo de caso integrado de MBA sobre a primeira Copa do Mundo com 48 seleções
-(Canadá, México e Estados Unidos — 104 partidas, 308 gols): coleta e validação da base,
-estatística aplicada, mineração de dados e um dashboard interativo em arquivo único.
+Estudo de caso para a disciplina Visualização de Dados e Elaboraçãode Dashboards
+ESTUDO DE CASO – COPA DO MUNDO FIFA 2026
 
-**Disciplina:** Visualização de Dados e Elaboração de Dashboards · **Autor:** Carlos Rodrigues · Agosto de 2026
+**Disciplina:** Visualização de Dados e Elaboração de Dashboards **Professor:**Dr. José Remo Ferreira Brega
+· **Aluno:** Carlos Rodrigues · Agosto de 2026
 
 ![Dashboard da Copa 2026](docs/hero.jpg)
 
